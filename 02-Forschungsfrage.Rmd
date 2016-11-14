@@ -1,0 +1,78 @@
+# Forschungsfrage {#forschungsfrage}
+
+## Aufbau einer Forschungsfrage
+
+Vor dem Ausarbeiten einer Seminar-/Bachelor- oder Masterarbeit muss eine Forschungsfrage ausformuliert werden. 
+
+```{}
+Forschungsfragen werden zwingend mit einem Fragezeichen formuliert!
+```
+
+Weiter müssen folgende Bedingungen erfüllt sein für eine gute Forschungsfrage: 
+
+* Frage sollte verständlich, präzise und beantwortbar sein
+* Klare Eingrenzung des Themas
+* Wertneutrale Formulierung
+* Sollte das Formulieren von Hypothesen erlauben
+
+Ausserdem gilt: 
+
+```{}
+Forschungsfragen müssen zwindend mit der Relevanz des Themas verbunden werden!
+```
+
+Dies bedeutet, dass eine Forschungsfrage durch folgende Fragen begründet werden kann:
+
+* Warum sollte man das Thema untersuchen?
+* Gibt es in der Literatur eine Lücke?
+* Passt die Realität nicht zur Theorie?
+* Ist das Thema für die Öffentlichkeit oder für eine bestimmte Gruppe von Interesse?
+
+```{block, type='rmdcomment'}
+Natürlich muss die Forschungsfrage auch für dich persönlich interessant sein. Wieso interessiert dich das Thema? Wieso ist die Forschungsfrage für dich persönlich relevant?
+```
+
+## Gute und Schlechte Forschungsfragen
+
+Beispiel 1:
+
+```{block, type = 'rmdwrong'}
+Warum macht die SVP immer einen rassistischen Wahlkampf?
+```
+
+```{block, type='rmdright'}
+Welche Faktoren charakterisieren die Wahlkampfstrategie der SVP bei den eidgenössischen Wahlen 2015?
+```
+
+
+Beispiel 2:
+
+```{block, type = 'rmdwrong'}
+Was ist ein Instrument?
+```
+
+```{block, type='rmdright'}
+Anhand von welchen Kriterien lassen sich politische Instrumente typologisieren?
+```
+
+
+Beispiel 3:
+
+```{block, type = 'rmdwrong'}
+Wie kann das schweizerische politische System verbessert werden?
+```
+
+```{block, type='rmdright'}
+Wie kann das schweizerische Wahlsystestem angepasst werden, damit auch kleinere Gruppierungen in der Legislative berücksichtigt werden?
+```
+
+
+Beispiel 4:
+
+```{block, type = 'rmdwrong'}
+Wieso geht man abstimmen?
+```
+
+```{block, type='rmdright'}
+Welche Faktoren haben dazu geführt, dass am 28. Februar 2016 überdurchschnittlich viele Personen an den eidgenössischen Abstimmungen teilgenommen haben?
+```

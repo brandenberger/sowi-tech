@@ -1,0 +1,142 @@
+# Literaturrecherche {#literaturrecherche}
+
+Bei der Literaturrecherche geht es darum möglichst viele relevante Quellen aufzufinden, die für die Beantwortung der Forschungsfrage relevant sind.
+
+## Quellen
+
+Folgende Quellen sind vorzuziehen: 
+
+```{block, type = 'rmdright'}
+* Wissenschaftliche Literatur: Bücher, Journals, Fachzeitschriften
+* Berichte und Studien aus der Praxis 
+* Gesetzestexte
+* Lexika
+```
+
+Wissenschaftliche Literatur die in Monographien, Sammelbänder oder Fachzeitschriften publiziert ist stellt die Grundlage für jegliche wissenschaftliche Arbeiten dar. 
+Diese Literatur kann ergänzt werden mit Hilfe von Berichten und Studien aus der Praxis. Ein Beispiel dafür wäre der Bericht des Bundesamtes für Statistik über [Arbeitsproduktivität im Dienstleistungssektor](https://www.bfs.admin.ch/bfs/de/home/aktuell/neue-veroeffentlichungen.assetdetail.1220118.html) [Bundesamt für Statistik, 2016: Analyse der Arbeitsproduktivität im Dienstleistungssektor 1997-2014. Neuenburg: Bundesamt für Statistik.].
+
+
+Folgende Quellen sind akzeptabel, sollten aber nicht den grünen Quellen vorgezgen werden: 
+
+```{block, type = 'rmdalmostright'}
+* Artiel in den Medien
+* Beriche von Interessengruppen
+* Wissenschaftliche Blogs
+* Konferenzpaper
+```
+
+Diese Quellen werden oftmals benötig um die aktuelle Relevanz eines Themas in der Einleitung zu begründen. Wichtig dabei ist, dass diese Quellen hinterfragt und kritisch diskutiert werden. Eine Statistik die von einer Interessengruppe herausgegeben wurde ist oftmals voreingenommen und gilt deshalb als nicht wissenschaftlich.
+Wissenschaftliche Blogs und Konferenzpapiere sollten, wenn möglich, mit normalen wissenschaftlichen Quellen ersetzt werden.
+
+Folgende Quellen sind nicht geeignet für eine Seminar-/Bachelor- oder Masterarbeit:
+
+```{block, type = 'rmdwrong'}
+* Social Media
+* (Leien-)Berichte aus dem Internet
+* Wikipedia
+```
+
+Informationen aus Social Media Seiten, Blogs aus dem Internet von Leien oder Wikipedia sind nicht akzeptierte Quellen und gehören nicht in wissenschaftliche Arbeiten.
+
+
+```{block, type = 'rmddaumenregel'}
+Mindestens 2/3 der Quellen müssen aus dem grünen Bereich stammen.
+```
+
+```{block, type = 'rmddaumenregel'}
+Die Anzahl Quellen muss mindestens der Anzahl Seiten entsprechen. 
+Das heisst, eine 15-seitige Arbeit sollte mindestens 15 verschiedene Quellen aufweisen.
+```
+
+
+## Vorgehen
+
+```{}
+1.	Welche Fragestellung habe ich? Was schreibe ich für eine Arbeit?
+2.	Vorhandene Literatur sichten (Proseminar, Vorwissen etc.)
+3. Für Fachliteratur: Snowballing / Wer wird zitiert? Welche Autoren gibt es? Welche Sammelbände und Journals?
+4. Für andere Quellen: Google, admin-Webseite, etc.
+5. Evaluation der gefundenen Literatur: Was ist wirklich relevant für mich? Passt die Literatur zur Fragestellung? (Bspw. Lesen von Abstracts)
+6. Auswählen der Quellen und erst HIER wirklich anfangen zu lesen
+```
+
+Nach dem aufstellen der Fragestellung kann oftmals das Literaturverzeichnis des Proseminars/Seminars oder der Vorlesung als Literaturquelle dienen.
+
+Weiter kann man bei relevanten Artikeln einerseits schauen, wer die Autoren zitieren und andererseits, wer den relevanten Artikel zitiert hat in nachfolgenden Publikationen. 
+
+Nach dem Aufspühren der Literatur muss herausgefiltert werden, welche Dokumente tatsächlich für die Beantwortung der Fragestellung in Frage kommen. 
+Nach dem ersten Filtern werden dann die überflogenen Dokumente in der Tiefe gelesen und analysiert.
+
+```{block, type = 'rmddaumenregel'}
+Wenn man keine geeignete Literatur findet, kann man auch den Dozierenden um Hilfe bitten.
+```
+
+## Literatur online finden
+
+```{block, type='rmddaumenregel'}
+Gebt Acht auf die Sprache der Publikation: manche Suchen verfasst man am besten auf Deutsch (z.B. wenn es um Schweizer Politik geht), andere besser auf English (z.B. wenn es um allgemeine Literatur zu einem Thema geht).
+```
+
+### Datenbanken
+
+Die [SSCI - Social Science Citation Index](www.webofknowledge.com) Platform ist ein guter Startpunkt für die Literaturrecherche.
+
+Auf der Website kann man sich zuerst über Shibboleth einlogen indem man unter `Institutional (Shibboleth) users sign in` die Auswahl `Swiss Higher Education and Research (SWITCHaai)` festlegt.
+
+```{r, echo=FALSE, fig.cap = 'Social Science Citation Index - Web of Science Login', fig.width=10, fig.height=8}
+knitr::include_graphics(rep("screenshots/WebOfScience_Login.png"))
+```
+
+Nach dem Einloggen mit Hilfe des Campus-Accounts (und dem VPN-Client, wenn die Suche ausserhalb der Universität erfolgt) kann man in der Suchmaske Artikel suchen: 
+
+```{r, echo=FALSE, fig.cap = 'Social Science Citation Index - Web of Science Suchfunktion', fig.width=10, fig.height=8}
+knitr::include_graphics(rep("screenshots/WebOfScience_Search.png"))
+```
+
+Und die Ergebisse dann filtern oder durchscrollen: 
+
+```{r, echo=FALSE, fig.cap = 'Social Science Citation Index - Web of Science Resultate', fig.width=10, fig.height=8}
+knitr::include_graphics(rep("screenshots/WebOfScience_Results.png"))
+```
+
+```{block, type='rmddaumenregel'}
+Besonders gut an der Web of Science Seite ist die Verlinkung der Zitierenden Artikel:
+```
+
+```{r, echo=FALSE, fig.cap = 'Social Science Citation Index - Web of Science Zitierende Artikel finden', fig.width=10, fig.height=8}
+knitr::include_graphics(rep("screenshots/WebOfScience_Citation.png"))
+```
+
+
+### Bibliotheken
+
+Im [Onlinekatalog der Swissbib](http://baselbern.swissbib.ch) findet man alle Bücher, die im Biblioteksverband der Universität Bern (IDS Verband) verfügbar sind. 
+
+```{r, echo=FALSE, fig.cap = 'Swissbib Artikel- und Buch-Suche', fig.width=10, fig.height=8}
+knitr::include_graphics(rep("screenshots/Swissbib_Search.png"))
+```
+
+Die Seite erlaubt das Erstellen von Merklisten, die für die Zusammenstellung der Literatur für Arbeiten zu einem bestimmten Thema besonders wertvoll sind.
+Weiter kann man die Suchergebnisse gut filtern und eingrenzen.
+
+### Google Scholar
+
+Als Alternative kann Literatur auch über Google Scholar gesucht werden. Hier ist aber Vorsicht geboten: die Resultate können z.T selektiv sein.
+
+```{block, type='rmddaumenregel'}
+Verwende Google Scholar erst, wenn du dich im Thema bereits auskennst und somit die Suchergebnisse schneller filtern kannst.
+```
+
+```{r, echo=FALSE, fig.cap = 'Google Scholar - Suchabfrage', fig.width=10, fig.height=8}
+knitr::include_graphics(rep("screenshots/GoogleScholar_Suche1.png"))
+```
+
+```{block, type='rmddaumenregel'}
+Google Scholar Suchabfragen werden besser, wenn du die genauen Schlagworte des Themas eingeben kannst. Verbinde sie mit 'AND' oder 'OR' oder schreib zusammenhängende Wörter in Anführungszeichen um die Suche zu verbessern.
+```
+
+```{r, echo=FALSE, fig.cap = 'Google Scholar - Suchabfrage verfeinert', fig.width=10, fig.height=8}
+knitr::include_graphics(rep("screenshots/GoogleScholar_Suche2.png"))
+```
+

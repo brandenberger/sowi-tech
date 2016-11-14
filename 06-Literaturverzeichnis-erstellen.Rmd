@@ -1,0 +1,25 @@
+# Literaturverzeichnis erstellen {#literaturverzeichniserstellen}
+
+Das Literaturverzeichnis ist ein eigenständiges Kapitel am Ende des Textes. Wichig ist, dass es systematisch aufgebaut ist und immer gleich formatiert. 
+
+Für die Sortierung gilt: 
+
+1. Alphabetisch den Namen nach
+2. nach Jahr
+3. Einzelautoren vor mehreren Autoren
+
+Falls diese 3 Regeln ein nicht-eindeutige Ordnung erlauben, werden den Jahren ein Buchstabe angefügt: z.B. 2012a, 2012b, 2012c
+
+Ein Ausschnitt: 
+
+```{block, type='rmdright'}
+Fischer, Claude S. 2005: Bowling alone: What's the score? Social Networks 27: 155-167. 
+
+Fukuyama, Francis. 1995a. Konfuzius und Marktwirtschaft. Der Konflikt der Kulturen. München: Kindler.
+
+Fukuyama, Francis. 1995b. Trust: the Social Virtues and the Creation of Prosperity. New York: Free Press. 
+
+Granovetter, Mark S. 1973: The Strength of Weak Ties. American Journal of Sociology 78: 1360-1380.
+
+Granovetter, Mark S. 1974. Getting a Job: A Study of Contacts and Careers. Cambridge: Harvard University Press.
+```

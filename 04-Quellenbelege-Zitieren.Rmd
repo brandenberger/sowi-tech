@@ -1,0 +1,76 @@
+# Quellenbelege {#quellenbelege}
+
+Quellenbelege sind ein Grundelement jedes wissenschaftlichen Textes.
+Sie dienen zur Kennzeichnung von Ideen, Resultaten, Argumentationen und Formulierungen, welche von anderen Autoren verfasst wurden.
+Belege oder Zitate werden auch gebraucht um Ideen oder Befunde von eigenen Resultaten abzugrenzen. Aller Text ohne Quellenangabe wird als euer Beitrag zur Literatur angesehen. Fehlen Quellenangaben so begeht man ein Plagiat (siehe Kapitel \@ref(plagiate)).
+
+Wie man Bücher, Artikel, Webpages etc. zitiert wird in Kapitel \@ref(zitieren) erläutert.
+
+## Wo stehen Quellenbelege?
+
+Im Fliesstext werden Quellenangaben am Ende des Satzes aber noch vor dem Satzzeichen gemacht. 
+
+```{}
+Hier steht irgend ein Forschungsergebnis eines Forschungsteams zu einem bestimmten Thema (Smith 2016).
+```
+
+Fussnoten werden in den Sozialwissenschaften nur selten als Quellenangabe verwendet und muss auf jeden Fall vom Dozierenden abgesegnet werden. 
+
+## Wann braucht man Quellenbelege?
+
+```{block, type='rmdright'}
+Immer!
+```
+
+```{block, type='rmdwrong'}
+wirklich?
+```
+
+```{block, type='rmdright'}
+Ja, immer!
+```
+
+Allgemeines Wissen muss aber nicht deklariert werden: 
+
+* Der Himmel ist blau.
+* Herr Schneider-Amman ist 2016 Bundespräsident.
+* Karl Schenk war als Bundesrat am längsten im Amt.
+
+```{block, type='rmddaumenregel'}
+Die Grenze, was allgemeines Wissen ist und was nicht ist nicht immer klar: Im Zweifelsfall eine Quelle suchen und angeben!
+```
+
+## Zitate belegen
+
+Zitate sind wörtliche Übernahmen einer Textpassage aus einem anderen Dokument. 
+Hierfür verwendet man Anführungs- und Schlusszeichen. Alles was zwischen den Anführungs- und Schlusszeichen steht darf nicht verändert werden. Auch Rechtschreibefehler, Formatierungen etc. müssen vom Original übernommen werden.
+
+Wenn man ein Zitat kürzen möchte, kann man `[...]` verwenden. 
+Wenn man das erste Wort eines Zitates gross schreiben möchte, muss man es in eckige Klammern setzen. 
+Direkt nach dem Zitat erfolgt die Kennzeichungn der Quelle.
+
+Ein Beispiel: 
+
+> "[T]he conditions under which policy making takes place in the advanced democracies increasingly resembel (sic!) the assumptions upon which [...] Kingdon (2011) originally based his multiple streams framework (MSF)."
+(Herweg et al. 2015: 435)
+
+## Paraphrasen
+
+Paraphrasen sind sinngemässe Übernahmen einer Textpassage aus einem anderen Dokument. Hierfür braucht es keie direkte Kennzeichung (z.B. Anführungszeichen) aber die Quelle erfolgt direkt nach der Paraphrase.
+
+Wenn der Bezug zu einem bestimmten Absatz gehört müssen Seitenzahlen genannt werden. Dies ist normalerweise der Fall!
+
+Ein Beispiel: 
+
+```{}
+Grosser  politischer  Wandel  wird  im  ACF  vor  allem  als  Resultat  von  "significant perturbations external  to  the  subsystem"  (Sabatier  &  Jenkins-Smith  1993:  34),  oder anders  ausgedrückt, als  Resultat  eines  massiven  externen  Schocks  auf  ein  Politikfeld verstanden.  Die  Autoren nennen  vier  mögliche  Ereignisse,  die  solche  Veränderungen  mit sich  ziehen  können:  Grosse sozio-ökonomische  Veränderungen,  Umschwünge  der öffentlichen  Meinung,  Veränderungen in  den  beteiligten  Koalitionen,  und  Entscheide  und Auswirkungen  von  anderen  Politikfeldern (Sabatier  &  Jenkins-Smith  1988).  Ein  weiterer potentieller  Auslöser  für  einen  grossen Politikwandel  ist  einerseits  das  Konzept  des internen  Schocks,  das  auf  das  Subsystem  wirkt. Der  Auslöser  für  den  Wandel  taucht dort  innerhalb  und  nicht  ausserhalb  des  Politikfeldes auf.  Andererseits  können  Lerneffekte die  Präferenzen  verändern,  indem  verschiedene Akteure  neue  Informationen  erhalten.
+Schliesslich  ist  es  auch  möglich,  dass  das  Aushandeln von  Verträgen  zur  Beilegung eines  Streits  zwischen  zwei  sich  vorgängig  bekämpfenden Koalitionen  deren  Präferenzen verschiebt  (Sabatier  & Weible  2007).
+```
+
+## Verweise
+
+Verweise beziehen sich nur auf das Thema oder den generellen Inhalt einer Quelle. Verweise werden oftmals nach der Nennung eines grösseren Themas eingefügt. Im nachfolgenden Beispiel ist es die Nennung der ACF-Theorie, die von bestimmten Autoren gegründet und weiterentwicklet wurde.
+
+```{}
+Der  Prozess  der  Ausgestaltung  der  geplanten  Energiewende  ist  nun  seit dem Jahr  2012  im Gange,  wodurch  diejenigen  politischen  Akteure  ins  Zentrum  der Aufmerksamkeit  rücken,  die an  diesem  Prozess  massgeblich  beteiligt  sind.  Im Sinne  des  Advocacy  Coalition  Frameworks (ACF)  (siehe z.B.  Sabatier  1988, 1991  &  1998,  Sabatier  &  Jenkins-Smith  1993  &  1998, Nohrstedt  2006, Sabatier  &  Weible  2007)  spielen  hierbei  vor  allem die  Präferenzen  sowie die Ressourcen  der  beteiligten  Akteure  eine  entscheidende  Rolle.
+```

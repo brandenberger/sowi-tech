@@ -1,0 +1,16 @@
+# Plagiate {#plagiate}
+
+> "Unter einem Plagiat versteht man die ganze oder teilweise Übernahme eines fremden Werkes in eine eigene Arbeit ohne Angabe der Quelle und des Autors oder der Autorin. Das Plagiat stellt eine Verletzung des Urheberrechts dar.
+Kürzere Passagen eines fremden Werkes dürfen zitiert werden, unter der Voraussetzung, dass das Zitat entsprechend gekennzeichnet wird und die Quelle angegeben wird (Art. 25 Abs. 2 Urheberrechtsgesetz)." [@uniBE2012]
+
+Ausnahmlos alle Dokumente werden digital überprüft, bevor überhaupt angefangen wird zu korrigieren.
+
+Zudem kennen die Dozierenden ihre Literatur aus dem Fachgebiet meist sehr gut und erkennen Plagiate schneller als gedacht.
+
+Ein Plagiatsverstoss hat ernsthafte Folgen und kann zu einem Ausschluss von der Hochschule führen. 
+
+```{r, echo=FALSE, fig.cap = 'Plagiatssoftware Turnitin', fig.width=10, fig.height=8}
+knitr::include_graphics(rep("screenshots/plagiate.png"))
+```
+
+

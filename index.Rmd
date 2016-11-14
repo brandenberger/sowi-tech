@@ -1,0 +1,96 @@
+---
+title: "Wissenschaftliche Arbeitstechniken"
+author: "Mittelbau, Institut für Politikwissenschaft, Universität Bern"
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::gitbook: 
+    css: [style.css, font-awesome.min.css]
+  bookdown::pdf_book: default
+bibliography: ["book.bib"]
+biblio-style: "apalike"
+link-citations: true
+---
+
+# Einleitung
+
+## Ziel 
+Das folgende Dokument befasst sich mit Arbeitstechniken für das erarbeiten von sozialwissenschaftlichen Fragestellungen.
+Das Dokument vermittelt wissenschaftliches `Handwerk` und dient als Hilfeleistung für Seminararbeiten, Bachelorarbeiten und Masterarbeiten.
+Ziel ist es, grundlegende Kenntnisse der Arbeitstechniken anzueignen und anzuwenden. 
+
+## Aufbau
+Kapitel \@ref(forschungsfrage) erläutert, wie man eine Forschungsfrage stellt. 
+
+Kapitel \@ref(literaturrecherche) erläutert, wie man relevante Literatur zur Behandlung der Forschungsfrage findet. 
+
+Kapitel \@ref(quellenbelege) erläutert, wie man Quellen im Text richtig angibt.
+
+Kapitel \@ref(zitieren) erläutert, wie man verschiedene Dokumente zitiert.
+
+Kapitel \@ref(literaturverzeichniserstellen) erläutert, wie man ein Literaturverzeichnis aufbaut. 
+
+Kapitel \@ref(literaturverwaltung) gibt einige Hinweise, wie man Literatur am besten verwaltet. 
+
+Kapitel \@ref(plagiate) erläutert, wie die Universität Bern Plagiate handhabt.
+
+## Texthilfen
+
+```{block, type='rmdcomment'}
+Hier steht ein Kommentar.
+```
+
+```{block, type ='rmdwrong'}
+Hier steht ein schlechtes oder falsches Beispiel.
+```
+
+```{block, type ='rmdright'}
+Hier steht ein korrektes Beispiel.
+```
+
+```{block, type = 'rmddaumenregel'}
+Hier steht eine Daumenregel.
+```
+
+
+## Zusammenstellung der Inhalte
+
+Aufbereitung der Inhalte*:
+Ackermann, Kathrin  & 
+Ackermann, Maya   & 
+Alpiger, Claudia   & 
+Angst, Mario  & 
+Arnold, Tobias  & 
+Bernauer, Julian  & 
+Bieri, Niklaus & 
+Brandenberger, Laurence  & 
+Dermont, Clau  & 
+Engler, Sarah  & 
+Fill, Anna  & 
+Freiburghaus, Rahel  & 
+Gerber, Marlène  & 
+Glaus, Anik  & 
+Guignard, Sophie  & 
+Guthmann, Kai  & 
+Heidelberger, Anja  & 
+Herzog, Laura & 
+Kammermann, Lorenz  & 
+Kijewski, Sara  & 
+Koller, Daniela  & 
+Labanino, Rafael & 
+Lutz, Philipp  & 
+Metz, Florence  & 
+Müller, Sean  & 
+Nebel, Kerstin  & 
+Oehrli, Dominique  & 
+Rapp, Carolin  & 
+Schubiger, Maximilian & 
+Storz, Anna & 
+Weisstanner, David & 
+Wirz, Rolf  & 
+Zumbach, David 
+
+
+Zusammenstellung*: Laurence Brandenberger, Clau Dermont, Lorenz Kammermann
+
+(*alphabetisch geordnet)

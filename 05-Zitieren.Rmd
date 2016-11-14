@@ -1,0 +1,145 @@
+# Zitieren {#zitieren}
+
+## Bücher zitieren
+
+Grundlegend gilt: 
+
+```{}
+Name, Vorname und Vorname Name. Jahr. Titel. Untertitel. Druckort: Verlag.
+```
+
+```{block, type='rmdright'}
+Cairney, Paul. 2012. Understanding Public Policy. Theories and Issues. Basingstoke und New York: Palgrave McMillan.
+```
+
+oder: 
+
+```{block, type='rmdright'}
+Granovetter, Mark S. 1974. Getting a Job: A Study of Contacts and Careers. Cambridge: Harvard University Press.
+```
+
+## Sammelbänder zitieren
+
+Grundlegend gilt: 
+
+```{}
+Name, Vorname und Vorname Name. Jahr. Titel des Kapitels. In Titel des Sammelbands, herausgegeben von Vorname Name und Vorname Name. Druckort: Verlag.
+```
+
+Ein Beispiel: 
+
+```{block, type='rmdright'}
+Albrecht, Steffen. 2010. Knoten im Netzwerk. In Handbuch der Netzwerkforschung, herausgegeben von Christian Stegbauer und Roger Häußling. Wiesbaden: VS Verlag.
+```
+
+Folgende Zitierart ist ebenfalls korrekt:
+
+```{block, type='rmdright'}
+Albrecht, Steffen. 2010. Knoten im Netzwerk. In Handbuch der Netzwerkforschung von Christian Stegbauer und Roger Häußling (Hrsg.). Wiesbaden: VS Verlag.
+```
+
+## Zeitschriftenartikel zitieren
+
+Grundlegend gilt: 
+
+```{}
+Name, Vorname und Vorname Name. Jahr. Titel des Papers. Titel des Journals
+Jahrgang(Ausgabe): Seitenzahlen.
+```
+
+Ein Beispiel: 
+
+```{block, type='rmdright'}
+Birkland, Thomas. 1998. Focusing Events, Mobilization, and Agenda Setting.
+Journal of Public Policy 18(1): 53-74.
+```
+
+## Internetseiten zitieren
+
+Grundlegend gilt: 
+
+```{}
+Autor. Jahr. Titel der Seite. Webdokument: Vollständige URL (Zuletzt besucht am: Datum).
+```
+
+Ein Beispiel: 
+
+```{block, type='rmdright'}
+Corten, Rense. 2014. 11 ways to measure segregation in social networks. Webdokument: http://www.rensecorten.org (Zuletzt besucht am: 10. November 2016).
+```
+
+Ein Beispiel eines Zeitungsartikels: 
+
+```{block, type='rmdright'}
+Healy, Patrick und Jeremy W. Peters. 2016. Donald Trump's Victory Is Met With Shock Across a Wide Political Divide. Webdokument: http://www.nytimes.com/2016/11/10/us/politics/donald-trump-election-reaction.html (Zuletzt besucht am: 10. November 2016).
+```
+
+
+## Ein Datensatz zitieren
+
+Auch Datensätze müssen zitiert werden. Dies erfolgt im Text genau so wie ein Buch. Im Literaturverzeichnis gilt folgendes: 
+
+```{}
+Name. Jahr. Titel des Datensatzes. Version. Ort: Verlag/Organisation.
+```
+
+zum Beispiel: 
+
+```{block, type='rmdright'}
+Volkens, Andrea, Pola Lehmann, Theres Matthiess, Nicolas Merz, Sven Regel und Annika Werner. 2016. The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2016a. Berlin: Wissenschaftszentrum Berlin für Sozialforschung.
+```
+
+
+## Ein R-Packet zitieren
+
+Dasselbe gilt für R-Packages oder Stata-Ado-Packages.
+
+```{}
+Name. Jahr. Package-Name: Package-Titel. R-Package Version X.X.X. URL zur cran-Webseite (Zuletzt besucht am: Datum).
+```
+
+```{block, type='rmdright'}
+Leifeld, Philip, Skyler J. Cranmer und Bruce A. Desmarais. 2016. xergm: Extensions of Exponential Random Graph Models. R-Package Version 1.7.0. http://cran.r-project.org/package=xergm (Zuletzt besucht am: 10. November 2016).
+```
+
+
+## Gängige Probleme beim Zitieren
+
+### Autor/Autorin ist unklar
+
+Ist der Autor/Autorin nicht klar, so gilt als erstes abzuklären, ob die Quelle tatsächlich brauchbar und nötig ist. Idealerweise sollte die Quelle durch eine andere ersetzt werden. 
+
+Ist die Quelle absolut zentral für die Arbeit, so soll sie ohne Namen eingefügt werden: 
+
+```{}
+-. Jahr. Titel. Art des Dokumentes: URL (Zuletzt besucht am: Datum). 
+```
+
+Falls es sich nicht um ein Webdokument handelt, wird die Quelle wie folgt eingefügt: 
+
+```{}
+-. Jahr. Titel. Art des Dokumentes.
+```
+
+Hierfür gilt aber: nur wenn absolut nötig und evtl. sogar nach Absprache mit dem Dozent, da eine falsche Quellenangabe zu einem Plagiat führen kann und den Titel des Studienganges kosten kann.
+
+### Quelle hat kein Datum
+
+Gibt es für eine Quelle kein Datum oder Jahrzahl, so soll auch hier abgewogen werden, wie wichtig die Quelle ist und ob man sie evtl. ersetzen kann. 
+
+Wenn nicht, wird die Quelle ohne Jahr und mit den Worten `keine Angabe` angegeben (im Text, sowie im Literaturverzeichnis).
+
+```{}
+Autor. Keine Angabe. Titel. [weitere Angaben je nach Dokumentart].
+```
+
+### Autor ist eine Organisation
+
+Ist der Autor eine Organisation, so wird der vollständige Name der Organisation (+ die Abkürzung in Klammern) als Autor eingefügt: 
+
+```{block, type='rmdright'}
+Bundesamt für Energie (BFE). 2013. Bericht über die Vernehmlassung des ersten Massnahmenpaketes der Energiestrategie 2050. Bern: BFE.
+```
+
+
+
