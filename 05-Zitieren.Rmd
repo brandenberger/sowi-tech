@@ -43,15 +43,13 @@ Albrecht, Steffen. 2010. Knoten im Netzwerk. In Handbuch der Netzwerkforschung v
 Grundlegend gilt: 
 
 ```{}
-Name, Vorname und Vorname Name. Jahr. Titel des Papers. Titel des Journals
-Jahrgang(Ausgabe): Seitenzahlen.
+Name, Vorname und Vorname Name. Jahr. Titel des Papers. Titel des Journals Jahrgang(Ausgabe): Seitenzahlen.
 ```
 
 Ein Beispiel: 
 
 ```{block, type='rmdright'}
-Birkland, Thomas. 1998. Focusing Events, Mobilization, and Agenda Setting.
-Journal of Public Policy 18(1): 53-74.
+Birkland, Thomas. 1998. Focusing Events, Mobilization, and Agenda Setting. Journal of Public Policy 18(1): 53-74.
 ```
 
 ## Internetseiten zitieren
@@ -102,12 +100,17 @@ Name. Jahr. Package-Name: Package-Titel. R-Package Version X.X.X. URL zur cran-W
 Leifeld, Philip, Skyler J. Cranmer und Bruce A. Desmarais. 2016. xergm: Extensions of Exponential Random Graph Models. R-Package Version 1.7.0. http://cran.r-project.org/package=xergm (Zuletzt besucht am: 10. November 2016).
 ```
 
+Gewisse R-Packages geben einen Zitiervorschlag, das teilweise ein Paper oder Buch ist: 
+
+```{r, echo=T}
+citation("ggplot2")
+```
 
 ## Gängige Probleme beim Zitieren
 
 ### Autor/Autorin ist unklar
 
-Ist der Autor/Autorin nicht klar, so gilt als erstes abzuklären, ob die Quelle tatsächlich brauchbar und nötig ist. Idealerweise sollte die Quelle durch eine andere ersetzt werden. 
+Ist der Autor/die Autorin nicht klar, so gilt als erstes abzuklären, ob die Quelle tatsächlich brauchbar und nötig ist. Idealerweise sollte die Quelle durch eine andere ersetzt werden. 
 
 Ist die Quelle absolut zentral für die Arbeit, so soll sie ohne Namen eingefügt werden: 
 

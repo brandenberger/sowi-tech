@@ -1,0 +1,730 @@
+# Einstieg in R {#r-start}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      error = FALSE, 
+                      warning = FALSE, 
+                      message = FALSE, 
+                      fig.width=9, fig.heigth=9)
+```
+
+Unterlagen für die Einführung in R, Proseminar-Level. (c) Clau Dermont, Institut für Politikwissenschaft, Universität Bern.
+
+Basierend auf: Wickham, Hadley & Garrett Golemund. **R for Data Science.** O'Reilly. [R for Data Science](http://r4ds.had.co.nz/)
+
+Weitere Möglichkeiten, um sich selbständig in R einzuarbeiten:
+
+* [Try R](http://tryr.codeschool.com/), ein Tutorial für die Grundsätze der R-Sprache,
+* [Beginners' Guide to R](http://www.computerworld.com/article/2497143/business-intelligence/business-intelligence-beginner-s-guide-to-r-introduction.html), einfache Einführung, 
+* [Cookbook](http://www.cookbook-r.com/), verschiedene weiterführende Tutorials,
+* [RDDJ](https://rddj.info/), Ressourcen für Datenjournalismus mit R,
+* [R Vis](http://rvis.vulp.io), weiterführender Kurs in Datenvisualisierungen.
+
+## Vorbereitung
+
+Bitte die aktuellste Version von [R (3.4.2)](https://stat.ethz.ch/CRAN/) vorgänglich installieren, zusätzlich empfiehlt sich [RStudio](https://www.rstudio.com/) als Oberfläche zur Arbeit mit R. Diese Einführung geht davon aus, dass RStudio genutzt wird.
+
+```{block, type='rmdcomment'}
+Einer der Vorteile an RStudio ist, dass wir auf einem Bildschirm die verschiedenen Kacheln/Panes haben: Links oben "Source", links unten die "Console", rechts oben das "Environment", und rechts unten meist die "Files" oder die "Plots". Anders als in R ist die gesamte Arbeitsumgebung aufgeräumert. Die vier Panes können übrigens frei angeordnet werden, ich bevorzuge die Konsole auf der rechten Seite zu haben, sodass sich Source und Console nicht im Platz konkurrenzieren. 
+
+Vom Arbeitsprozedere ist es sinnvoll, seine Scripte immer in einem R-Scriptfile abzuspeichern (entspricht einem do-File in Stata). In diesem Script wird gearbeitet, und anschliessend werden die Codeabschnitte in der Konsole ausprobiert. Neben rüberkopieren gibt es übrigens auch die Möglichkeit, per Ctrl+Enter ausgewählten Code automatisch laufen zu lassen. 
+
+Alle weiteren Shortcuts sind per Alt+Shift+K zu finden.
+```
+
+Um RStudio parat für die Arbeit zu haben, installieren wir zusätzlich die Package `tidyverse`. Neben den Grundbefehlen von R vereinfacht das "Tidyverse" verschiedene Schritte der Datenaufbereitung, -säuberung, und -darstellung.  
+
+```{r install, eval=FALSE}
+# Einmalig nach der Installation von R
+install.packages("tidyverse")
+```
+
+Bei jeder Sitzung von R werden wir anschliessend die Arbeitsumgebung vorbereiten. Dafür laden wir die Package `tidyverse` (jedesmal) und definieren, wo unsere Daten zu finden sind. Zur Vorbereitung ladet ihr die auf ILIAS zur Verfügung gestellten Unterlagen runter, und speichert die in einem Ordner. Diesen Ordner definiert ihr jetzt als Arbeitsumgebung mit `setwd()` oder per Menü-Auswahl.
+
+```{r load}
+# Jedesmal beim Aufstarten von R
+# Package laden
+library(tidyverse)
+```
+
+```{r setwd, eval=FALSE}
+# Pfad setzen
+wd <- "~/Pfad/zu/eurem/Ordner/" # darauf achten, dass R keine \ versteht
+setwd(wd)
+```
+
+In RStudio kann der Pfad auch per Menü ausgewählt werden: Session > Set Working Directory > Choose Directory. Oder per Shortcut: Ctrl+Shift+H
+
+```{block, type='rmdcomment'}
+Die drei wichtigsten Packages im Tidyverse sind `tidyr` und `dplyr` für die Datensäuberung sowie `ggplot2` für Visualisierungen. RStudio bietet auch Cheatsheets für diese Packages an, d.h., eine Übersicht der Befehle. Diese finden sich im Menü Help > Cheatsheets. 
+
+Alternativ kann man bei allen Befehlen von R in der Konsole direkt den Befehl `?ggplot2` reinschreiben, und R wird einem die Hilfeseite für diese Funktion oder Package öffnen. 
+```
+
+# Datenanalyse
+
+## Daten anschauen
+
+Politikwissenschaft hat in vielen Fällen mit Daten zu tun. Umfragen, statistische Erhebungen der Bevölkerung, Anzahl abgestimmte Initiativen und Referenden, Abstimmungsverhalten in Parlamenten, Netzwerke von politischen Akteuren - alle diese Daten verlangen nach einer Auswertung und intuitiv zugänglichen Resultaten, welche ermöglichen, die Daten zu interpretieren und zu verstehen. 
+
+Die Analyse von Daten bedeutet in vielen Fällen zuerst einmal die mühsame Aufbereitung von Daten. Nach diesem ersten Schritt ist es aber möglich, mit relativ einfachen Mitteln die Daten tatsächlich anzuschauen und zu interpretieren. Für einen ersten Einstieg in R werden wir die Aufbereitung von Daten zuerst überspringen, und zuerst die Daten direkt anschauen. 
+
+Für diese erste Einführung nutzen wir Daten der [VOTO-Studien](http://www.voto.swiss), d.h. eine Umfrage mit Individualdaten. Diese Daten sind im Uninetz verfügbar. Hier laden wir die Daten zur Abstimmung vom 21. Mai 2017 in R rein, das heisst zur Abstimmung zum [Energiegesetz](https://www.admin.ch/ch/d/pore/va/20170521/index.html) (Energiestrategie 2050). Aus den gesamten Daten bearbeiten wir einen Sample von 200 Beobachtungen und 23 Variablen. Den gesamten Fragebogen findet ihr ebenfalls auf der Webseite von VOTO oder auf ILIAS.
+
+```{r loaddata}
+# Der Befehl read.table gibt an, welche Datei geladen werden soll, 
+# und speichert das Resultat in ein R-Objekt mit dem Namen "voto" ab
+voto <- read.table("voto855_sample.csv", header=T, sep=";", 
+                   stringsAsFactors = F, fileEncoding="UTF-8")
+# Dieser Befehl funktioniert nur, indem der richtige Pfad zur Datei angegeben
+# wird, wenn er also scheitert, kontrollieren dass diese Datei auch im "wd" ist
+```
+
+Sobald die Daten eingelesen sind, sollten wir diese anschauen, damit wir auch wissen, dass alles korrekt geklappt hat - und wenn es unbekannte Daten sind, um diese kennen zu lernen. Diese reingeladenen Daten können wir jetzt anschauen, indem wir den Objektnamen `voto` referenzieren. R kann viele Objekte - Datenframes, Vektoren, Matrizen, Werte, Funktionen - im sogenannten Environment haben (in RStudio ist eine der vier Kacheln eine Übersicht des Environments). Deshalb ist es wichtig (im Vergleich bspw. zu Stata) immer zu referenzieren, welchen Datensatz oder Vektor man anschauen möchte.  
+
+```{r describe1, eval=FALSE}
+# Den gesamten Datensatz in der Konsole anzeigen (wird nicht durchgeführt)
+voto
+
+# Ähnlich wie der edit-Befehl in Stata ist View()
+View(voto)
+```
+
+```{r describe2}
+# Nur die ersten sechs Linien und die ersten zehn Variablen
+head(voto[,1:10])
+
+# Nur die Variablennamen 
+colnames(voto)
+```
+
+```{r describe3}
+# Wollen wir Zusammenfassungen sehen, können wir summary() verwenden
+# Dies funktioniert für den gesamten Datensatz oder nur für eine Variable
+summary(voto$birthyear)
+
+# table() zeigt die Werte einer Variable an
+table(voto$vote_1)
+```
+
+## Daten vergleichen
+
+*Dieses Kapitel folgt in etwa Chapter 1 des Buches [R for Data Science](http://r4ds.had.co.nz/data-visualisation.html)*
+
+Interessanter wird es aber, wenn wir nicht nur einzelne Variablen anschauen, sondern zwei oder mehrere miteinander vergleichen. Beispielsweise könnten wir mit diesen Daten der Frage auf den Grund gehen, wie Alter, Geschlecht und Partizipation zusammenhängen - nehmen jüngere Stimmberechtigte und Frauen tatsächlich weniger of an Abstimmungen teil? 
+
+Folgende Variablen kommen dafür zum Einsatz:
+
+* das Alter erfahren wir über das Geburtsjahr `birthyear`,
+* das Geschlecht ist in der Variable `sex` gespeichert,
+* die Partizipationsvariable `part` beschreibt, ob eine Person am 21. Mai 2017 teilgenommen hat, 
+* zusätzlich wissen wir über `part2`, wie oft eine Person im Schnitt bei zehn Abstimmungen teilnimmt. 
+
+Schauen wir uns diese Variablen einmal genauer an. 
+
+```{r comp1}
+head(select(voto, birthyear, part, part2, sex))
+
+# Geburtsjahr
+summary(voto$birthyear)
+table(voto$birthyear)
+
+# Partizipation am 21. Mai 2017
+table(voto$part)
+
+# Partizipation an 10 Abstimmungen
+table(voto$part2)
+
+# Geschlecht
+table(voto$sex)
+```
+
+Jetzt möchten wir diese Variablen aber vergleichen, nicht nur einzeln anschauen. 
+
+```{r comp2}
+# Vergleich Partizipation / Geschlecht
+table(voto$sex, voto$part)
+table(voto$sex, voto$part2)
+```
+
+Schon bei der zweiten Tabelle stossen wir aber auf Darstellungsprobleme - so viele Zahlen sind nicht mehr intuitiv vergleichbar. Vor allem, wenn wir jetzt beispielsweise das Geburtsjahr und die Partizipation an zehn Abstimmungen vergleichen würden. Um das zu ermöglichen, arbeiten wir nicht mehr mit Tabellen, sondern mit Visualisierungen. 
+
+# Daten visualisieren {#r-vis}
+
+Fünf verschiedene Visualisierungsmöglichkeiten werden wir heute kurz anschauen, die alle ein ganz anderes Ziel haben, um Daten darzustellen.
+
+## Histogramme
+
+Histogramme werden üblicherweise dazu genutzt, um Verteilung und Häufigkeit einer Variable aufzuzeigen, wie beispielsweise beim Geburtsjahr. Ein Histogramm ist für *kontinuierliche* Variablen geeignet. 
+
+```{block, type='rmdcomment'}
+Für Grafiken verwenden wir die Package `ggplot2`. 
+
+`ggplot2` ist nach einem Muster aufgebaut, bei dem zuerst die Grafik per `ggplot()` initiiert wird und in einem nächsten Schritt die geometrische Struktur definiert wird (die erste Ebene, wo tatsächlich etwas dargestellt wird, im ersten Beispiel `geom_histogram()`). Entweder im ersten oder zweiten Befehl müssen wir dann die Daten sowie die Variablen definieren, welche die Darstellung bestimmen, hier also `data=voto, aes(x=birthyear)`. aes steht dabei für "Ästethik". Anschliessend können mit weiteren Befehlen Titel, Skalen, Farben etc ergänzt werden. 
+```
+
+```{r vis1}
+ggplot(data=voto, aes(x=birthyear)) +
+  geom_histogram(binwidth=5)
+```
+
+Spezifisch bei einem Histogramm ist der Befehl `binwidth=5`, mit dem wir definieren, wie breit die Balken sind - in diesem Fall sind es jeweils fünf Jahre, die zusammengefasst werden.
+
+## Bar Graph
+
+Ein Bar Graph sieht zwar ähnlich wie ein Histogramm aus, zeigt aber Quantitäten von *kategoriellen* Variablen (Faktoren in R-Sprache). Ein visueller Unterschied ist, dass diese Balken einen Abstand haben, anders als beim Histogramm, wo diese aneinander "gebunden" sind, um die kontinuierliche Variable zu repräsentieren.
+
+Beispielsweise können wir so darstellen, wie viele der befragten Personen teilgenommen haben - eigentlich dieselbe Information wie aus `table(voto$part)`, einfach intuitiver interpretierbar.
+
+```{r bargraph}
+ggplot(data=voto, aes(x=part)) + 
+  geom_bar()
+```
+
+Natürlich ist es auch möglich, mehr als nur eine Variable darzustellen. Eine Variante ist, dieselbe Grafik pro Geschlechtskategorie zu wiederholen, oder mit unterschiedlichen Farben zu arbeiten:
+
+```{r bargraph2}
+# Ein facet_wrap() macht mehrere Grafiken für alle Kategorien
+ggplot(data=voto, aes(x=part)) + 
+  geom_bar() +
+  facet_wrap(~sex)
+
+# Mit fill=sex füllen wir die Balken nach Kategorie mit unt. Farben
+ggplot(data=voto, aes(x=part, fill=sex)) + 
+  geom_bar()
+
+# Zusätzlich führt position="dodge" dazu, dass die Balken nebeneinander sind
+ggplot(data=voto, aes(x=part, fill=sex)) + 
+    geom_bar(position="dodge")
+```
+
+Hier stellt sich immer die Frage, welche Variable wie dargestellt werden soll. Möglich wäre natürlich auch, das ganze umzudrehen, sodass der Anteil an Teilnehmende pro Geschlechtskategorie offensichtlicher ist:
+
+```{r bargraph3}
+# Hier werden x und y getauscht
+# zusätzlich führt position="fill" dazu, dass auf 1 normiert wird
+ggplot(data=voto, aes(x=sex, fill=part)) + 
+    geom_bar(position="fill")
+```
+
+## Scatterplot
+
+Ein Scatterplot zeigt das Verhältnis zwischen zwei quantitativen (meist kontinuierlichen) Variablen an. Diese werden häufig genutzt um visuell festzustellen, ob ein Zusammenhang zwischen zwei Variablen bestehen könnte.
+
+Wollen wir einen Scatterplot darstellen, braucht es ebenfalls x (die erklärende Variable) und y (die zu erklärende Variable), sowie wiederum eine andere geometrische Form. 
+
+Da die voto-Daten mit Textwerten anstatt mit numerischen Werten arbeiten, müssen wir die Variable `part2` - die Partizipation an 10 Abstimmungen - kurz recodieren. Das machen wir hier in zwei Schritte: zuerst werden die Werte, welche als "weiss nicht" codiert sind, zu sogenannten `NA` recodiert. Anschliessend nutzen wir die ersten zwei Zahlen pro Wert als Zahlenwerte.  
+
+```{r recode2}
+# Hier wird die Variable voto$part2 neu bestimmt als NA, 
+# falls die Bedingung in der eckigen Klammer zustimmt, 
+# also falls der Wert der Variable bei 98 ist
+voto$part2[voto$part2=="98 don't know"] <- NA
+
+# Anschliessend machen wir eine neue Variable voto$part10, welche
+# 1. numerisch ist per as.numeric(),
+# 2. einen Substring aus der alten Variable voto$part2 ist per substr(), 
+# 3. wobei beim ersten Wert gestartet wird, und beim zweiten gestoppt
+voto$part10 <- as.numeric(substr(voto$part2, start=1, stop=2))
+table(voto$part10)
+summary(voto$part10)
+
+# Falls bei einem dieser Befehle Probleme auftauchen, kann per ?substr
+# die Hilfeseite aufgerufen werden
+```
+
+Jetzt, da wir eine kontinuierliche Variable (das Geburtsjahr) und eine ordinale Variable (die Teilnahmehäufigkeit) haben, können wir diese zwei Werte auf einem Scatterplot darstellen.
+
+```{r scatterplot}
+# Scatterplots bilden wir mit Punkten (geom_point()), welche x- und y-Wert annehmen
+ggplot(data=voto, aes(x=birthyear, y=part10)) +
+  geom_point()
+```
+
+Hier sehen wir jetzt vor allem ein Problem der Umfrageforschung: solche Umfragen nach Abstimmungen erreichen insbesondere Personen, die politisch interessiert sind, und deshalb häufig an Abstimmungen teilnehmen (viele Werte auf der y-Achse sind bei 10), oder dies zumindest in der Umfrage angeben, weil es sozial erwünscht ist, an Abstimmungen teilzunehmen. Wir überschätzen hier wahrscheinlich die tatsächliche Partizipation dieser Leute. 
+
+Ausserdem haben wir das Problem, dass wir nicht genau wissen, ob die Punkte jeweils nur eine Person darstellen, oder beispielsweise mehrere. Zumindest dieses Problem können wir grafisch lösen, indem wir ein "Jitter" einfügen, der die Punkte per Zufall um den tatsächlichen Wert streut.
+
+```{r scatterplot2}
+# ein geom_jitter() statt geom_point() bringt Streuung rein
+ggplot(data=voto, aes(x=birthyear, y=part10)) +
+  geom_jitter()
+```
+
+Allerdings ist es immer noch schwierig, eine Tendenz aus dieser Grafik rauszulesen. Damit wir den Zusammenhang besser interpretieren können, ist es möglich, noch eine Regressionslinie einzufügen, welche einen bivariaten Zusammenhang darstellt. 
+
+```{r scatterplot3}
+# Wir können direkt einen bivariaten Zusammenhang schätzen
+# Scatterplot ergänzt um eine lineare Regressionslinie
+ggplot(data=voto, aes(x=birthyear, y=part10)) +
+  geom_jitter() +
+  geom_smooth(method="lm")
+```
+
+Tatsächlich sehen wir einen leicht negativen Zusammenhang - die Linie zeigt fällt bei jüngeren Jahrgängen. Auch diese sehr einfache Auswertung bestätigt wieder einmal, dass jüngere Stimmberechtigte tendenziell weniger häufig an Abstimmungen teilnehmen. 
+
+Zuletzt können wir noch schauen, welche dieser Personen denn auch an der Abstimmung vom 21. Mai 2017 teilgenommen haben. Beispielsweise, indem wir erneut Farben reinbringen. 
+
+```{r scatterplot4}
+# Nur bei den Punkten werden wir noch die Farbe reinbringen mit aes(color=part)
+ggplot(data=voto, aes(x=birthyear, y=part10)) +
+  geom_jitter(aes(color=part)) +
+  geom_smooth(method="lm")
+```
+
+Und in einer letzten Variante interessiert uns noch, ob dieses Muster nach Geschlecht unterschiedlich ist. Dafür machen wir für Frauen und Männer je eine bivariate Regressionslinie.
+
+```{r scatterplot5}
+# Nur bei den Punkten werden wir noch die Farbe reinbringen mit aes(color=part)
+ggplot(data=voto, aes(x=birthyear, y=part10, color=part)) +
+  geom_jitter() +
+  geom_smooth(method="lm")
+```
+
+## Grafiken speichern
+
+Sollen die Grafiken schliesslich gespeichert werden, bietet `ggplot2` mit `ggsave()` einen einfachen Befehl an. Dieser Befehl nimmt als Normaleinstellung die letzte produzierte Grafik und speichert sie im aktuellen Arbeitsordner ab:
+
+```{r save, eval=F}
+ggsave("plottitle.pdf",     # Dateiname der zu speichernden Grafik
+       dpi=300,             # Auflösung, von 72 (Minimum) bis 300
+       units=c("cm"),       # Genutzte Masse für Dateigrösse, cm/mm/in
+       width=10, height=10) # Breite und Grösse der Grafik.
+```
+
+## Zusammenfassung
+
+Daten können also aus vielen verschiedenen Blickwinkeln betrachtet und somit analysiert werden. Tabellen und Grafiken sind dabei erste Möglichkeiten, um grosse Datensätze - teilweise mit mehreren hundert Variablen und tausende Beobachtungen - in leichter zu interpretierende Informationen zu reduzieren. 
+
+Im vorliegenden Fall war die Frage, ob junge Stimmberechtigte und Frauen tatsächlich weniger häufig an Volksabstimmungen teilnehmen. Verschiedene Antworten sind möglich:
+
+* mit den Bar Charts haben wir gesehen, dass absolut betrachtet mehr Frauen teilnehmen als Männer. Wird allerdings nach Geschlecht geschaut, wie der Anteil ist, dann ist die Stimmbeteiligung bei Frauen vergleichsweise tiefer als bei Männer.
+* mit dem Scatterplot haben wir Alter und Partizipationshäufigkeit verglichen. Obwohl die Daten mit Vorsicht zu geniessen sind, sehen wir eine Tendenz, dass die Beteiligung bei jüngeren Stimmberechtigten tiefer ist als bei älteren Stimmberechtigten. 
+* Dieser Effekt scheint vor allem bei Männer stark zu sein - bei den Frauen scheint der Zusammenhang weniger stark ausgeprägt zu sein, d.h. vor allem ältere Männer nehmen vergleichsweise häufiger teil. 
+
+Allerdings können wir nicht immer davon ausgehen, dass Datensätze immer so bereitgestellt werden, dass diese direkt auswertbar sind. Deshalb geht es in den nächsten Teilen dieser kurzen Einführung um die Frage, wie Datensätze aufbereitet werden können. Dieser weniger interessante Teil ist dabei mindestens so wichtig wie die Analyse selber: sind die Daten nicht korrekt, beruhen die Auswertungen auf falschen Annahmen, sind Resultate vielleicht dem Zufall geschuldet, und geht viel Zeit verloren, weil die gesamte Arbeit wiederholt werden muss. 
+
+# Daten säubern {#r-daten}
+
+Nicht immer sind Datensätze eins zu eins verwendbar für statistische Auswertungen. Meist - wie auch beim Voto-Datensatz - müssen wir zuerst Variablen recodieren, um diese besser auswerten zu können, oder wollen neue Variablen bilden. Ein paar wichtige Befehle dafür werden in diesem Kapitel kurz vorgestellt.
+
+*Dieses Kapitel folgt in etwa Chapter 3 des Buches [R for Data Science](http://r4ds.had.co.nz/transform.html)*
+
+## Datensätze laden
+
+Beginnen wir mit der Frage, wie wir überhaupt Daten in R reinladen können. Die Daten für die Grafiken wurden mit dem Befehl `read.table()` reingeladen, weil diese als `.csv`-File zur Verfügung standen. Teilweise müssen wir aber Textdateien, Excel-Files, Stata-Daten und viele weitere Varianten in R reinladen. Für fast alle Möglichkeiten gibt es auch spezifische Funktionen (beispielsweise ein `read.dta()` für Stata-Daten in der Package `foreign`), die mit einer Google-Suche zu finden sind. 
+
+Bleiben wir aber bei der generelleren Variante, einer Tabelle mit Daten, wobei die Zellen beispielsweise mit Kommas, Strichpunkte oder Tabs getrennt sind. In diesem Fall können wir die Grundfunktion `read.table()` verwenden. 
+
+```{r read, eval=FALSE}
+voto <- # vor dem Pfeil kommt wie üblich der Name des Objekts
+  read.table("voto855_sample.csv", # Pfad zur Datei
+             header = T, # falls im csv-File Variablennamen drin sind: T/TRUE
+             sep = ";", # wie sind die Zellen getrennt (separated)? 
+             stringsAsFactors = F, # Texte als Faktoren: F/FALSE
+             fileEncoding="UTF-8" # welche Textkodierung
+  ) # Klammer nicht vergessen!
+```
+
+Mit demselben Befehl können unterschiedlichste Datenfiles geöffnet werden. Grundsätzlich, falls unbekannt, lohnt es sich, den Datensatz zuerst mit einem Texteditor zu öffnen, um die Struktur zu sehen. 
+
+Haben wir mit R gearbeitet und einen Datensatz so bearbeitet, wie wir ihn gebrauchen können, lohnt es sich, diese Daten auch neu abzuspeichern. Einerseits können wir wiederum ein csv-File abspeichern, wobei wir simultan mit `write.table()` vorgehen. Die andere Möglichkeit ist, alle Objekte, Funktionen etc., also die aktuelle Arbeitsumgebung wie in der Kachel "Environment" angezeigt, abzuspeichern. Dafür speichern wir die Daten als `.RData`-File ab. 
+
+```{r write, eval=FALSE}
+# csv-File schreiben, sodass dieses in Tabellenprogrammen geöffnet werden kann
+write.table( # da wir das ja extern machen, müssen wir kein Objekt bilden mit <-
+  voto, # welches Objekt soll abgespeichert werden?
+  file="sample.csv", # wo soll das Objekt abgespeichert werden?
+  sep=";", # wie sollen die Zellen getrennt werden?
+  fileEncoding="UTF-8" # welche Textkodierung
+  ) # Klammer nicht vergessen!
+
+# .RData-Image speichern
+# speichert alles ab, nicht nur ein Objekt
+save.image("sample.RData")
+```
+
+```{block, type='rmdcomment'}
+Wer auf der Suche nach noch mehr Möglichkeiten zum Einlesen von Daten ist, soll sich mit der Package `tidyr` vertraut machen. In dieser sind auch moderne Befehle drin, um Datensätze umzuformen/reshapen. 
+```
+
+## Beobachtungen und Variablen auswählen
+
+Nicht immer wollen wir alle Beobachtungen oder alle Variablen in einem Datensatz anschauen - wie bei den Grafiken, wo wir uns für vier Variablen interessiert haben. In `dplyr` gibt es mit den Befehlen `filter()` und `select()` intuitive Funktionen, um das durchzuführen. 
+
+```{r filterselect}
+# filter() wählt Daten nach Bedingungen aus (rows)
+voto.frauen <- filter(voto, sex=="2 woman")
+voto.jungefrauen <- filter(voto, sex=="2 woman", birthyear>1979)
+
+# select() wählt Variablen aus (cols)
+voto.partic <- select(voto, personid_4, part, part2)
+
+# Variablen löschen
+voto.red <- select(voto, -trust_1, -importance1, -value3, -value11)
+```
+
+Dabei gibt es einige Operatoren, die wohl nicht unbekannt sind:
+
+* `>` ist grösser als, sowie `>=` grösser gleich, 
+* `<` ist kleiner als, sowie `<=` kleiner gleich, 
+* `==` steht für "entspricht",
+* `!=` wiederum steht für "enspricht nicht".
+
+Kombiniert werden Bedingungen ebenfalls mit `&` (und) sowie `|` (oder). Zuletzt gibt es noch eine spezielle Funktion, um `NA`, also Missings, zu finden. Mit `is.na()` und der Umkehrung `!is.na()` können wir fehlende Werte finden. Haben wir in einer Variable viele fehlende Beobachtungen (z.B. das Einkommen), können wir diese Beobachtungen ausschliessen, und dann Auswertungen mit den neuen, vollständigen Daten machen.
+
+Details könnt ihr rausfinden, indem ihr `?filter` und `?select` tippt. 
+
+## Variablen bilden und recodieren
+
+Oft wollen wir Variablen so haben, dass sie für uns besser ausgewertet werden können. Beim Einstieg haben wir beispielsweise die Partizipation an zehn Abstimmungen als Zahlenwerte abgespeichert, damit wir diese in der Grafik einbinden können.
+
+Zusätzliche Beispiele, wieso Variablen recodiert oder neu gebildet werden, sind:
+
+* eine Dummy-Variable mit ist/ist nicht, z.B. eine Variable für Frauen, die 1 ist, wenn die Beobachtung von einer Frau stammt, oder 0, wenn es ein Mann ist;
+* eine Variable, welche das Alter anzeigt, statt das Geburtsjahr;
+* eine Variable mit Alterskategorien, statt einem fortlaufenden Alter; 
+* weil wir andere Labels haben wollen, als solche, die in den Daten drin sind; 
+* und viele weitere Möglichkeiten. 
+
+R bietet für jeden Geschmack Möglichkeiten, wie Variablen gebildet und recodiert werden können. Einige zentrale Beispiele sind im nächsten Code aufgezeigt:
+
+```{r recode}
+# Dummy-Variablen
+# Frau == 1 und Mann == 0
+voto$frau <- as.numeric(voto$sex == "2 woman")
+# alle Frauen, welche mind. 7 Mal teilgenommen haben
+voto$frau.part <- as.numeric(voto$sex == "2 woman" & voto$part10 >= 7)
+# oder wir wollen voto$part einfacher verwendbar machen, hat partizipiert == 1
+voto$participated <- as.numeric(voto$part == "1 participated")
+
+# Berechnungen machen
+# Alter statt Geburtsjahr (präziser wäre, auch den Monat zu berücksichtigen)
+voto$age <- 2017 - voto$birthyear
+# Grundsätzlich funktioniert R wie Algebra mit Platzhaltern, 
+# das wäre also so etwas wie y = 2017 - x, 
+# nur das y und x nicht nur einzelne Werte sind, sondern Vektoren mit n Werten
+
+# Kategorien bilden
+# per logische Bedingung
+voto$agecat <- NA
+voto$agecat[voto$age >= 18] <- 1
+voto$agecat[voto$age > 35] <- 2
+voto$agecat[voto$age > 50] <- 3
+voto$agecat[voto$age > 65] <- 4
+
+# Variable per recode-Befehl neu formulieren
+voto$income <- recode(voto$income, 
+                      "01 less than 2'000 CHF" = "<4'000 CHF",
+                      "02 2'001-3'000 CHF" = "<4'000 CHF",
+                      "03 3'001-4'000 CHF" = "<4'000 CHF",
+                      "04 4'001-5'000 CHF" = "4'001-8'000 CHF",
+                      "05 5'001-6'000 CHF" = "4'001-8'000 CHF",
+                      "06 6'001-7'000 CHF" = "4'001-8'000 CHF",
+                      "07 7'001-8'000 CHF" = "4'001-8'000 CHF",
+                      "08 8'001-9'000 CHF" = "8'001-12'000 CHF",
+                      "09 9'001-10'000 CHF" = "8'001-12'000 CHF",
+                      "10 10'001-11'000 CHF" = "8'001-12'000 CHF",
+                      "11 11'001-12'000 CHF" = "8'001-12'000 CHF",
+                      "12 12'001-13'000 CHF" = ">12'001 CHF",
+                      "13 13'001-14'000 CHF" = ">12'001 CHF",
+                      "14 14'001-15'000 CHF" = ">12'001 CHF",
+                      "15 more than 15'000 CHF" = ">12'001 CHF",
+                      "98 don't know" = NA_character_,
+                      "99 no answer" = NA_character_
+                      ) 
+```
+
+Wenn wir jetzt die Variablen im Datensatz noch einmal anschauen, sehen wir auch, dass diese unterschiedliche "Typen" haben. Per `str(voto)` sehen wir nach den Variablennamen jeweils eine Abkürzung, welche uns angibt, was das für Variablen sind. Wichtige Abkürzungen sind:
+
+* `int` für Integer, `num` für Numerisch, sowie `dbl` für reale Zahlen, was also jeweils Zahlen repräsentieren, 
+* `chr` steht für Textstrings, 
+* `fctr` für Faktoren mit verschiedenen Levels, also im Hintergrund eine Zahl, die ein Label hat, 
+* und viele weitere, beispielsweise für Daten, Zeit, und logische Werte, also TRUE und FALSE. 
+
+Viele weitere Möglichkeiten bildet in `dplyr` der Befehl `mutate()`, auf den wir hier aber nicht näher eingehen werden. Mehr über `?mutate` verrät die Hilfeseite. 
+
+## Daten gruppieren und zusammenfassen
+
+Neben den bereits kennengelernten Möglichkeiten, Daten zusammenzufassen, bietet `dplyr` auch die Möglichkeit, mit dem Befehl `summarize()` zu Werten wie Mittelwert, Median, Quantile etc. zu kommen. Insbesondere in Zusammenarbeit mit `group_by()` ist dies ein sehr schneller Ansatz, um zu wichtigen deskriptiven Werten zu kommen. 
+
+Hier kommen neu Ketten ins Spiel. Anstatt immer alle Zwischenschritte abzuspeichern, können wir die Resultate einer Berechnung direkt weiter verwenden. Um dies zu machen, verwenden wir die sogenannte *Pipe*, `%>%`. Diese kann übrigens per Ctrl+Shift+M eingefügt werden. 
+
+Grundsätzlich entspricht eine Pipe %>% im Code etwa einem "und dann". Zuerst gruppieren wir Daten, und dann werden diese zusammengefasst. In mathematischer Notation entsprechen `x %>% f(y)` sowie `f(x, y)`, wobei das Spiel noch weiter geführt werden kann. Aber direkt ein Beispiel:
+
+```{r summarize1}
+# Partizipation pro Altersgruppe und Geschlecht
+voto %>% # nimm das Objekt voto und reiche es weiter zur nächsten Funktion
+  group_by(agecat, frau) %>% # gruppiere nach Alterskategorie, dann nach Frau
+  summarize(mean=mean(participated)) # bilde ein Mittelwert der Partizipation
+```
+
+So haben wir jetzt den Mittelwert pro Alterskategorie nach Geschlecht, da wir zwei Funktionen miteinander verbinden konnten. Wenn wir möchten, können wir diese Werte auch als neues Objekt abspeichern und später weiterverwenden, beispielsweise in einer Grafik. Dann würden wir in der ersten Zeile einfach `meanpart <- voto %>% ` ergänzen. 
+
+Im `summarize()`-Befehl können wir auch mehrere Werte gleichzeitig berechnen. 
+
+```{r summarize2}
+partsum <- voto %>%
+  group_by(agecat, frau) %>%
+  summarize(mean=mean(participated), 
+            var=var(participated), 
+            cases=n())
+partsum
+```
+
+## Deskriptive Statistik
+
+Neben der grafischen Auswertung von Variablen ist es in R natürlich auch möglich, statistische Masszahlen zu erhalten. Neben `summarize()` bietet uns R aber auch die Möglichkeit an, einzelne Zahlen direkt zu erhalten. 
+
+```{r descr}
+# Mittelwert der Partizipation (=Stimmbeteiligung)
+mean(voto$participated, na.rm=T)
+
+# Median des Geburtsjahr
+median(voto$birthyear)
+
+# Max und Min
+max(voto$birthyear)
+min(voto$birthyear)
+
+# Quantile
+quantile(voto$part10, c(0.1, 0.9), na.rm=T)
+
+# Varianz und Standardabweichung
+var(voto$part10, na.rm=T)
+sd(voto$part10, na.rm=T)
+```
+
+## Übung
+
+```{block, type='rmdcomment'}
+Um die neu kennengelernten Befehle anzuwenden, wird folgende kurze Übung vorgeschlagen, welche den Start für die eigene Datenauswertung darstellt. 
+
+Dabei kann auf die Unterlagen von der Einführung zurückgegriffen werden, wo alle notwendigen Befehle aufgeführt sind. 
+
+1. Erstelle ein R-Script, in dem du alle Befehle dokumentierst und falls nötig auch kommentierst (mit einem # am Anfang der Linie). Hinweis: in RStudio oben links auf das Symbol mit dem weissen Papier und dem grünen Plus klicken. 
+
+2. Von ILIAS den voto-Datensatz vom 21. Mai 2017 runterladen. In einem Ordner, das als 'working directory' dient abspeichern, und anschliessend in R laden. Hinweis: `setwd()` und `read.table()`.
+
+3. Anschliessend den Datensatz erkunden und gleichzeitig im Fragebogen (ebenfalls auf ILIAS) die Ausprägungen der Variablen überprüfen. Eine Variable auswählen, die genauer betrachtet werden soll. 
+
+4. Den Datensatz auf die Variablen reduzieren, die wirklich interessieren, also die ausgewählte Variable und z.B. Abstimmungsentscheid, Partizipation, Alter oder Kanton, falls gewünscht auch eine Untergruppe definieren, die angeschaut werden soll. 
+
+5. Eine Dummy- oder kategorielle Variable erstellen. 
+
+6. Versuchen, diese Variable grafisch darzustellen, nach Möglichkeit auch mit einer zweiten Variable kombiniert. Kurz beantworten: wie könnte diese Grafik verbessert werden? Tipp: orientiere dich an den vorgestellten Grafiken. 
+
+7. R-Script abspeichern, testen ob dieser ohne Fehler durchläuft. 
+```
+
+# Darstellung verfeinern {#r-vis2}
+
+Obwohl ggplot2 in einem ersten Schritt viele Gestaltungsentscheidungen übernimmt, ist es teilweise nötig und/oder sinnvoll, selbst die Kontrolle über einige Darstellungen zu behalten. Einige wichtige Punkte sollen deshalb hier eingeführt werden. 
+
+## Achsen
+
+ggplot2 ermöglicht, die Achsen und deren 'Limits' zu definieren, d.h. genau zu entscheiden, wie eine Achse aussehen soll. Aus der Einführung in Design und dem Argument der Ehrlichkeit einer Darstellung ist es sinnvoll, bei der y-Achse keine Trunkierung zu erlauben, da sonst Werte unterschätzt und Veränderungen überschätzt werden können. Der Befehl `xlim()` (oder auch `ylim()`) setzt zwei Werte als Grenzen der Skala: beispielsweise explizit auf 0, oder wenn man einen spezifischen Bereich genauer anschauen möchte. 
+
+```{r lims}
+voto$part2[voto$part2=="98 don't know"] <- NA
+voto$part10 <- as.numeric(substr(voto$part2, start=1, stop=2))
+
+ggplot(data=voto, aes(x=birthyear, y=part10)) +
+  geom_point() + 
+  xlim(c(1980,2000))
+```
+
+Soll die y-Achse im Linechart noch genauer kontrolliert werden, kann auf die Skalen zurückgegriffen werden. Beispielsweise der Befehl `scale_y_continuous`: Im nächsten Plot werden folgende Veränderungen eingeführt: 
+
+* die Werte werden in Prozente umgewandelt `y=part10/10`, die Skala wird in Prozente angepasst `labels=scales::percent_format()`, 
+
+* und die Grenzen der y-Achse auf 0 und 1 festgelegt, sowie Beschriftungen in 0.2-Schritten eingefügt (`'seq()` liefert in diesem Fall automatisch `c(0, 0.2, 0.4, 0.6, 0.8, 1)` und verhindert so u.a. Tippfehler).
+
+```{r ax}
+ggplot(data=voto, aes(x=birthyear, y=part10/10)) +
+  geom_point() + 
+  xlim(c(1960,2000)) +
+  scale_y_continuous(limits=c(0,1), breaks=seq(0,1,0.2),
+                     labels=scales::percent_format())
+```
+
+Darauf hinzuweisen ist, dass die korrekten Skalen verwendet werden müssen, da sonst ggplot2 die Werte falsch oder gar nicht interpretiert. Insbesondere verwendet werden kontinuierliche Skalen, diskrete Skalen, sowie Datumsskalen.
+
+Allerdings sind Skalen nicht nur für Achsen vorhanden, sondern auch für alle anderen Aesthetics. Insbesondere für Farben können diese sehr sinnvoll verwendet werden. 
+
+## Farben
+
+Farben bedeutet in diesem Sinne nicht nur, eine Grafik farbenfroh machen zu können, sondern auch, diese in meist besser publizierbare Grautöne zu halten. Werden somit Farben über `fill`, `color` sowie `alpha` genutzt, können diese per Skala definiert werden. 
+
+Ob `color` oder `fill` genutzt wird, ist abhängig vom Geom. Objekte mit einer Fläche wie beispielsweise in Balkendiagrammen oder Flächendiagrammen verwenden `fill` für den Inhalt und `color` für die Kontur. Die meisten anderen Objekte verwenden `color`. 
+
+Die einfachste Variante, um Farben zu definieren, ist indem eine vordefinierte Palette an Farben genutzt wird. In der nächsten Grafik wird der Befehl `scale_fill_brewer()` dazu genutzt. 
+
+```{r color}
+ggplot(data=voto, aes(x=part, fill=sex)) + 
+  geom_bar() +
+  scale_fill_brewer(palette="Dark2")
+```
+
+Je nachdem welche Palette genutzt wird (siehe `?RColorBrewer`) werden unterschiedliche Ziele erfüllt. Auch hier ist es relevant zu unterscheiden, ob kontinuierliche, divergierende oder kategorielle Skalen verwendet werden. 
+
+Eine andere Variante als über Paletten ist es, die Farben direkt manuell zu bestimmen -- wenn explizit definierte Farben verwendet werden sollen, welche eine gewisse Bedeutung haben (wie zum Beispiel Ja/Nein, Parteifarben, etc.). In dem Fall können Farben per `scale_fill_manual()` definiert werden. 
+
+```{r color2, fig.width=9, fig.heigth=9}
+voto.party <- filter(voto, party<="10")
+
+ggplot(data=voto.party, aes(x=party, fill=party)) +
+    geom_bar(position= "identity") +
+    scale_fill_manual(values = c("yellowgreen","firebrick",
+                                 "darkblue","orange",
+                                 "green4","lawngreen",
+                                 "gold","yellow","black")) +
+  coord_flip() # Um die Labels besser zu sehen wird die Grafik gedreht
+```
+
+Eine weitere Möglichkeit mit Farben zu arbeiten ist per Transparenz. Mit `alpha` lässt sich definieren, wie die Deckungskraft eines Objekts ist. Transparenz bietet sich beispielsweise bei Scatterplots mit vielen Beobachtungen als Alternative (oder Ergänzung) zu `geom_jitter` an -- an Orten mit vielen Punkten wird die höhere Dichte an Beobachtungen auch durch stärkere Farben gesehen, da sich die Punkte überlappen, während einzelne Punkte weniger herausstechen. Ähnlich kann bei vielen Linien mit Transparenz gearbeitet werden. 
+
+Nicht zuletzt kann `alpha` auch aus Designgründen gesetzt werden.  Wichtig ist dabei, dass `alpha` nicht dazu genutzt werden sollte, Grafiken 'unlesbar' zu machen, da die Objekte nicht mehr vollständig sichtbar sind. 
+
+```{r coloralpha, fig.width=9, fig.heigth=9}
+ggplot(data=voto.party, aes(x=party, fill=party, alpha=part)) +
+  geom_bar(position= "fill") +
+  coord_flip() +
+  scale_fill_manual(values =
+                      c("yellowgreen","firebrick","darkblue","orange",
+                        "green4","lawngreen","gold","yellow","black")) +
+  scale_alpha_manual(values=c(0.3, 0.95))
+```
+
+## Marker- und Linientypen
+
+Ähnlich wie Farben können wir auch Darstellungsformen anpassen, d.h. das Aussehen von Punkten (`shape`) und Linien (`linetype`). Grundsätzlich gibt es hier zwei verschiedene Varianten, entweder indem eine Form fix definiert wird, oder indem eine Form als Aesthetic gesetzt wird, was zu unterschiedlichen Resultaten führt. 
+
+```{r markers}
+ggplot(data=voto, aes(x=birthyear, y=part10,
+                      shape=as.factor(part), 
+                      color="blue")) +
+  geom_jitter()
+```
+
+Wird mit einer Aesthetic (`aes(color=as.factor(part))`) gearbeitet, dann gibt es pro Kategorie/Gruppe eine andere Darstellung. Wird derselbe Befehl ausserhalb der `aes()` gesetzt, wird fix eine Variante gesetzt, beispielsweise mit `aes(), color="blue"`. Je nachdem welches Ziel verfolgt werden soll, sind beide Befehle sinnvoll verwendbar. 
+
+Weitere Informationen zu [Shape](http://sape.inf.usi.ch/quick-reference/ggplot2/shape) und [Linetype](http://sape.inf.usi.ch/quick-reference/ggplot2/linetype) mit einer Übersicht der unterschiedlichen Formen. 
+
+Sowohl für Farben wie auch für Markertypen und Linien gibt es sinnvollere und weniger sinnvollere Verwendungen. Noah Iliinsky hat eine kurze Übersicht zusammengestellt: [Properties and Best Uses of Visual Encoding](http://complexdiagrams.com/properties).
+
+## Beschriftungen
+
+Neben der Darstellung selbst können die Informationen auf einer Grafik ebenfalls per Text eingefügt werden. Insbesondere wenn Plots mehr oder weniger alleine stehen ist es notwendig, genügend Informationen mitzuliefern, damit die lesende Person auch ohne Begleittext die Grafik nachvollziehen kann (-> Zugänglichkeit von Visualisierungen). 
+
+Punkte, die eine Grafik begleiten sollten sind:
+
+* Titel: Was wird in der Grafik gezeigt, für was stehen x- und y-Achse?
+
+* Legende: Wie sind Farbe, Marker und Liniendicke zu decodieren?
+
+* Lesehinweise bei unbekannteren Grafiken: Wie muss ich die Punkte, Linien und Strukturen interpretieren? 
+
+* Notiz zur weitergehenden Beschreibung: Habe ich Anpassungen an den Daten gemacht, welche bei der Interpretation berücksichtigt werden müssen, z.B. Outlier ausgeschlossen, Werte transformiert, etc.?
+
+Während die zwei ersten Punkte in jeder Grafik integriert werden sollten, können die zwei letzten Punkte auch im begleitenden Text erst hinzugefügt werden. 
+
+Jede Grafik sollte über ein Titel verfügen. Je nach Gestaltung kann dieser zwar Teil der Beschriftung einer Grafik sein (im Sinne von 'Grafik 1: Titel in Fett. Kommentar in normaler Schrift'), trotzdem ist es für eine schnelle Auffassung der Hauptaussage einer Grafik sinnvoll, einen Titel zu verwenden, der Teil der Grafik ist. 
+
+Unabdingbar ist eine Beschriftung der Achsen, wobei es empfehlenswert ist, keine Variablennamen zu verwenden (allgemein ist es verständlicher, wenn im finalen Text nicht mit Codes à la `logprctwrkagekat` gearbeitet wird, sondern mit Klarnamen). Im nächsten Beispiel wird der `labs()`-Befehl eingeführt.
+
+```{r labs, fig.width=9, fig.heigth=9}
+ggplot(data=voto.party, aes(x=party, fill=party, alpha=part)) +
+  geom_bar(position= "fill") +
+  coord_flip() +
+  scale_fill_manual(values = c("yellowgreen","firebrick","darkblue","orange",
+                               "green4","lawngreen","gold","yellow","black")) +
+  scale_alpha_manual(values=c(0.3, 0.95)) +
+  scale_y_continuous(limits=c(0,1), breaks=seq(0,1,0.2),
+                     labels=scales::percent_format()) +
+  labs(title="Partizipation nach Partei",
+       subtitle="VOTO Studie zur Abstimmung vom 21. Mai 2017, Energiegesetz",
+       x="Partei", y="",
+       fill="Partei",
+       alpha="Partizipation")
+```
+
+Unschön in dieser Grafik ist jetzt noch, dass die Labels, die in den Daten drin sind, nicht wirklich gesäubert sind. Wir haben hier zwei Möglichkeiten, die Beschriftung der einzelnen Balken und der Legenden anzupassen: entweder, wir verändern die zu Grunde liegenden Daten und recodieren die einzelnen Variablen (was insbesondere sinnvoll ist, wenn wir dieselben Daten für verschiedene Grafiken verwenden). Oder, wenn wir die Daten in ihrem ursprünglichen Format behalten wollen, direkt für die Grafik ändern, indem wir die Skalenlabels definieren. Zusätzlich ist die Anordnung in der Variable `part` "verkehrt", sodass wir diese ab sofort jeweils automatisch umkehren mit `forcats::fct_rev(part)`.
+
+```{r labels, fig.width=9, fig.heigth=9}
+ggplot(data=voto.party, aes(x=party, fill=party, alpha=forcats::fct_rev(part))) +
+  geom_bar(position= "fill") +
+  coord_flip() +
+  scale_x_discrete(labels=c("SVP", "SP", "FDP", "CVP", "GPS", 
+                             "GLP", "BDP", "EVP", "Lega")) +
+  scale_fill_manual(values = c("yellowgreen","firebrick","darkblue","orange",
+                               "green4","lawngreen","gold","yellow","black"), 
+                    labels=c("SVP", "SP", "FDP", "CVP", "GPS", 
+                             "GLP", "BDP", "EVP", "Lega")) +
+  scale_alpha_manual(values=c(0.3, 0.95), 
+                     labels=c("nicht teilgenommen", "teilgenommen")) +
+  scale_y_continuous(limits=c(0,1), breaks=seq(0,1,0.2),
+                     labels=scales::percent_format()) +
+  labs(title="Partizipation nach Partei",
+       subtitle="VOTO Studie zur Abstimmung vom 21. Mai 2017, Energiegesetz",
+       x="Partei", y="",
+       fill="Partei",
+       alpha="Partizipation")
+```
+
+Der Einfachheit halber können wir die Legende für die Farbe aber auch ausschalten (`guides(fill="none")`), da die Balken in diesem Fall ja beschriftet sind. Mit den gekürzten Labels können wir theoretisch auch wieder zur ungedrehten Variante der Grafik wechseln (ohne `coord_flip()`). Zusätzlich soll die Partizipationslegende an einem anderen Ort kommen (`theme(legend.position="bottom")`. 
+
+```{r labels2, fig.width=9, fig.heigth=9}
+ggplot(data=voto.party, aes(x=party, fill=party, alpha=forcats::fct_rev(part))) +
+  geom_bar(position= "fill") +
+  scale_x_discrete(labels=c("SVP", "SP", "FDP", "CVP", "GPS", 
+                             "GLP", "BDP", "EVP", "Lega")) +
+  scale_fill_manual(values = c("yellowgreen","firebrick","darkblue","orange",
+                               "green4","lawngreen","gold","yellow","black")) +
+  scale_alpha_manual(values=c(0.3, 0.95), 
+                     labels=c("nicht teilgenommen", "teilgenommen")) +
+  scale_y_continuous(limits=c(0,1), breaks=seq(0,1,0.2),
+                     labels=scales::percent_format()) +
+  labs(title="Partizipation nach Partei",
+       subtitle="VOTO Studie zur Abstimmung vom 21. Mai 2017, Energiegesetz",
+       x="Partei", y="",
+       fill="Partei",
+       alpha="Partizipation") +
+  guides(fill="none") +
+  theme(legend.position="bottom")
+```
+
+## Themen
+
+Letztens, `ggplot2` bietet die Möglichkeit, mit vordefinierten Themen den Grundaufbau anzupassen, d.h., Farbschemas, Hintergründe, Schriftarten etc. anzupassen. Ein Beispiel ist `theme_minimal()`, das den unschönen grauen Hintergrund entfernt:
+
+```{r theme}
+ggplot(data=voto.party, aes(x=party, fill=party, alpha=forcats::fct_rev(part))) +
+  geom_bar(position= "fill") +
+  scale_x_discrete(labels=c("SVP", "SP", "FDP", "CVP", "GPS", 
+                             "GLP", "BDP", "EVP", "Lega")) +
+  scale_fill_manual(values = c("yellowgreen","firebrick","darkblue","orange",
+                               "green4","lawngreen","gold","yellow","black")) +
+  scale_alpha_manual(values=c(0.3, 0.95), 
+                     labels=c("nicht teilgenommen", "teilgenommen")) +
+  scale_y_continuous(limits=c(0,1), breaks=seq(0,1,0.2),
+                     labels=scales::percent_format()) +
+  labs(title="Partizipation nach Partei",
+       subtitle="VOTO Studie zur Abstimmung vom 21. Mai 2017, Energiegesetz",
+       x="Partei", y="",
+       fill="Partei",
+       alpha="Partizipation") +
+  guides(fill="none") +
+  theme_minimal() +
+  theme(legend.position="bottom")
+```
+
+Mehr zu Themas findet sich auf der [Webseite des Tidyversums](http://ggplot2.tidyverse.org/reference/theme.html).
+
+## Übung
+
+```{block, type='rmdcomment'}
+Erstelle eine Grafik und finalisiere diese, indem du auf Text, Farbe, etc. achtest. Führe anschliessend in Lauftextform (keine Stichwörter) aus, was in dieser Grafik zu lesen ist, und wie diese zu interpretieren ist. 
+
+Es bietet sich an, mit dem Resultat der ersten Übung weiter zu arbeiten.
+``` 

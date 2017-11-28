@@ -1,8 +1,8 @@
 # Literaturverwaltung {#literaturverwaltung}
 
-Literaturverwaltungsprogramme helfen beim Sammeln, Verwalten und Klassifizieren und Weiternutzen von gelesener Literatur. 
+Literaturverwaltungsprogramme helfen beim Sammeln, Verwalten, Klassifizieren und Weiternutzen von gelesener Literatur. 
 
-Aus der gesammelten Datenbank kann dann automatisch ein Literaturverzeichnis erstellt werden immer wenn im Text ein Verweis eingefügt wird. Dies ist die gängige Art und Weise der Literaturverwaltung und beugt Fehler und viel mühsamer Arbeit durch handgeschriebene Literaturverzeichnissen vor.
+Aus der gesammelten Datenbank kann dann, immer wenn im Text ein Verweis eingefügt wird, automatisch ein Literaturverzeichnis erstellt werden. Dies ist die gängige Art und Weise der Literaturverwaltung und beugt Fehler und viel mühsame Arbeit durch handgeschriebene Literaturverzeichnissen vor.
 
 Programme für die Literaturverwaltung: 
 
