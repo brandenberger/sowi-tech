@@ -12,6 +12,10 @@ biblio-style: "apalike"
 link-citations: true
 ---
 
+```{r setup, include=FALSE}
+opts_chunk$set(tidy.opts=list(width.cutoff=80),tidy=TRUE)
+```
+
 # Einleitung
 
 ## Ziel 
@@ -33,6 +37,8 @@ Kapitel \@ref(literaturverzeichniserstellen) erläutert, wie man ein Literaturve
 Kapitel \@ref(literaturverwaltung) gibt einige Hinweise, wie man Literatur am besten verwaltet. 
 
 Kapitel \@ref(plagiate) erläutert, wie die Universität Bern Plagiate handhabt.
+
+Kapitel \@ref(r-start) und folgende geben einen ersten Einstieg in R.
 
 ## Texthilfen
 

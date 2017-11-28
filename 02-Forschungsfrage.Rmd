@@ -8,8 +8,9 @@ Vor dem Ausarbeiten einer Seminar-/Bachelor- oder Masterarbeit muss eine Forschu
 Forschungsfragen werden zwingend mit einem Fragezeichen formuliert!
 ```
 
-Weiter müssen folgende Bedingungen erfüllt sein für eine gute Forschungsfrage: 
+Weiter müssen folgende Bedingungen für eine gute Forschungsfrage erfüllt sein: 
 
+* Frage bezieht sich auf ein wissenschaftliches Interesse
 * Frage sollte verständlich, präzise und beantwortbar sein
 * Klare Eingrenzung des Themas
 * Wertneutrale Formulierung
@@ -29,7 +30,7 @@ Dies bedeutet, dass eine Forschungsfrage durch folgende Fragen begründet werden
 * Ist das Thema für die Öffentlichkeit oder für eine bestimmte Gruppe von Interesse?
 
 ```{block, type='rmdcomment'}
-Natürlich muss die Forschungsfrage auch für dich persönlich interessant sein. Wieso interessiert dich das Thema? Wieso ist die Forschungsfrage für dich persönlich relevant?
+Natürlich muss die Forschungsfrage auch für dich persönlich interessant sein. Wieso interessiert dich das Thema? Wieso ist die Forschungsfrage für dich persönlich relevant? Allerdings ist das nicht Teil der wissenschaftlichen Begründung, die in der Arbeit steht. 
 ```
 
 ## Gute und Schlechte Forschungsfragen
@@ -63,7 +64,7 @@ Wie kann das schweizerische politische System verbessert werden?
 ```
 
 ```{block, type='rmdright'}
-Wie kann das schweizerische Wahlsystestem angepasst werden, damit auch kleinere Gruppierungen in der Legislative berücksichtigt werden?
+Wie kann das schweizerische Wahlsystem angepasst werden, damit auch kleinere Gruppierungen in der Legislative berücksichtigt werden?
 ```
 
 
