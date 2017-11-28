@@ -1,14 +1,14 @@
 # Literaturverzeichnis erstellen {#literaturverzeichniserstellen}
 
-Das Literaturverzeichnis ist ein eigenständiges Kapitel am Ende des Textes. Wichig ist, dass es systematisch aufgebaut ist und immer gleich formatiert. 
+Das Literaturverzeichnis ist ein eigenständiges Kapitel am Ende des Textes. Wichtig ist, dass es systematisch aufgebaut ist und immer kohärent/gleich formatiert ist. 
 
 Für die Sortierung gilt: 
 
-1. Alphabetisch den Namen nach
+1. Alphabetisch nach Name
 2. nach Jahr
 3. Einzelautoren vor mehreren Autoren
 
-Falls diese 3 Regeln ein nicht-eindeutige Ordnung erlauben, werden den Jahren ein Buchstabe angefügt: z.B. 2012a, 2012b, 2012c
+Falls diese 3 Regeln eine nicht-eindeutige Ordnung oder Zuordnung erlauben, werden den Jahren ein Buchstabe angefügt: z.B. 2012a, 2012b, 2012c. Entsprechend werden diese Buchstaben dann auch im Text verwendet, damit klar ist, auf welche Quelle verwiesen wird, d.h. beispielsweise `Fukuyama (1995b)`.
 
 Ein Ausschnitt: 
 

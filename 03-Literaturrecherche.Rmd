@@ -1,6 +1,6 @@
 # Literaturrecherche {#literaturrecherche}
 
-Bei der Literaturrecherche geht es darum möglichst viele relevante Quellen aufzufinden, die für die Beantwortung der Forschungsfrage relevant sind.
+Bei der Literaturrecherche geht es darum, möglichst viele relevante Quellen aufzufinden, die für die Beantwortung der Forschungsfrage relevant sind.
 
 ## Quellen
 
@@ -13,31 +13,31 @@ Folgende Quellen sind vorzuziehen:
 * Lexika
 ```
 
-Wissenschaftliche Literatur die in Monographien, Sammelbänder oder Fachzeitschriften publiziert ist stellt die Grundlage für jegliche wissenschaftliche Arbeiten dar. 
-Diese Literatur kann ergänzt werden mit Hilfe von Berichten und Studien aus der Praxis. Ein Beispiel dafür wäre der Bericht des Bundesamtes für Statistik über [Arbeitsproduktivität im Dienstleistungssektor](https://www.bfs.admin.ch/bfs/de/home/aktuell/neue-veroeffentlichungen.assetdetail.1220118.html) [Bundesamt für Statistik, 2016: Analyse der Arbeitsproduktivität im Dienstleistungssektor 1997-2014. Neuenburg: Bundesamt für Statistik.].
+Wissenschaftliche Literatur, die in Monographien, Sammelbänder oder Fachzeitschriften publiziert ist, stellt die Grundlage für jegliche wissenschaftlichen Arbeiten dar. 
+Diese Literatur kann mit Hilfe von Berichten und Studien aus der Praxis ergänzt werden. Ein Beispiel dafür wäre der Bericht des Bundesamtes für Statistik über [Arbeitsproduktivität im Dienstleistungssektor](https://www.bfs.admin.ch/bfs/de/home/aktuell/neue-veroeffentlichungen.assetdetail.1220118.html) [Bundesamt für Statistik, 2016: Analyse der Arbeitsproduktivität im Dienstleistungssektor 1997-2014. Neuenburg: Bundesamt für Statistik.].
 
 
-Folgende Quellen sind akzeptabel, sollten aber nicht den grünen Quellen vorgezgen werden: 
+Folgende Quellen sind akzeptabel, sollten den grünen Quellen aber nicht vorgezogen werden: 
 
 ```{block, type = 'rmdalmostright'}
-* Artiel in den Medien
-* Beriche von Interessengruppen
+* Artikl in den Medien
+* Berichte von Interessengruppen
 * Wissenschaftliche Blogs
 * Konferenzpaper
 ```
 
-Diese Quellen werden oftmals benötig um die aktuelle Relevanz eines Themas in der Einleitung zu begründen. Wichtig dabei ist, dass diese Quellen hinterfragt und kritisch diskutiert werden. Eine Statistik die von einer Interessengruppe herausgegeben wurde ist oftmals voreingenommen und gilt deshalb als nicht wissenschaftlich.
+Diese Quellen werden oftmals benötigt um die aktuelle Relevanz eines Themas in der Einleitung zu begründen. Wichtig dabei ist, dass diese Quellen hinterfragt und kritisch diskutiert werden. Eine Statistik, die von einer Interessensgruppe herausgegeben wurde, ist oftmals voreingenommen und gilt deshalb als nicht wissenschaftlich.
 Wissenschaftliche Blogs und Konferenzpapiere sollten, wenn möglich, mit normalen wissenschaftlichen Quellen ersetzt werden.
 
-Folgende Quellen sind nicht geeignet für eine Seminar-/Bachelor- oder Masterarbeit:
+Folgende Quellen sind für eine Seminar-/Bachelor- oder Masterarbeit nicht geeignet:
 
 ```{block, type = 'rmdwrong'}
 * Social Media
-* (Leien-)Berichte aus dem Internet
+* (Laien-)Berichte aus dem Internet
 * Wikipedia
 ```
 
-Informationen aus Social Media Seiten, Blogs aus dem Internet von Leien oder Wikipedia sind nicht akzeptierte Quellen und gehören nicht in wissenschaftliche Arbeiten.
+Informationen aus Social Media Seiten, Blogs aus dem Internet von Laien oder Wikipedia sind nicht akzeptierte Quellen und gehören nicht in wissenschaftliche Arbeiten.
 
 
 ```{block, type = 'rmddaumenregel'}
@@ -53,19 +53,19 @@ Das heisst, eine 15-seitige Arbeit sollte mindestens 15 verschiedene Quellen auf
 ## Vorgehen
 
 ```{}
-1.	Welche Fragestellung habe ich? Was schreibe ich für eine Arbeit?
-2.	Vorhandene Literatur sichten (Proseminar, Vorwissen etc.)
+1. Welche Fragestellung habe ich? Was schreibe ich für eine Arbeit?
+2. Vorhandene Literatur sichten (Literaturliste des (Pro-)Seminars, Vorwissen etc.)
 3. Für Fachliteratur: Snowballing / Wer wird zitiert? Welche Autoren gibt es? Welche Sammelbände und Journals?
 4. Für andere Quellen: Google, admin-Webseite, etc.
 5. Evaluation der gefundenen Literatur: Was ist wirklich relevant für mich? Passt die Literatur zur Fragestellung? (Bspw. Lesen von Abstracts)
 6. Auswählen der Quellen und erst HIER wirklich anfangen zu lesen
 ```
 
-Nach dem aufstellen der Fragestellung kann oftmals das Literaturverzeichnis des Proseminars/Seminars oder der Vorlesung als Literaturquelle dienen.
+Nach dem Aufstellen der Fragestellung kann oftmals das Literaturverzeichnis des Proseminars/Seminars oder der Vorlesung als Literaturquelle dienen.
 
-Weiter kann man bei relevanten Artikeln einerseits schauen, wer die Autoren zitieren und andererseits, wer den relevanten Artikel zitiert hat in nachfolgenden Publikationen. 
+Weiter kann man bei relevanten Artikeln einerseits schauen, wer die Autorinnen zitieren und andererseits, wer den relevanten Artikel in nachfolgenden Publikationen zitiert hat. 
 
-Nach dem Aufspühren der Literatur muss herausgefiltert werden, welche Dokumente tatsächlich für die Beantwortung der Fragestellung in Frage kommen. 
+Nach dem Aufspüren der Literatur muss herausgefiltert werden, welche Dokumente tatsächlich für die Beantwortung der Fragestellung in Frage kommen. 
 Nach dem ersten Filtern werden dann die überflogenen Dokumente in der Tiefe gelesen und analysiert.
 
 ```{block, type = 'rmddaumenregel'}
@@ -80,7 +80,7 @@ Gebt Acht auf die Sprache der Publikation: manche Suchen verfasst man am besten 
 
 ### Datenbanken
 
-Die [SSCI - Social Science Citation Index](www.webofknowledge.com) Platform ist ein guter Startpunkt für die Literaturrecherche.
+Die [SSCI - Social Science Citation Index](www.webofknowledge.com) Plattform ist ein guter Startpunkt für die Literaturrecherche.
 
 Auf der Website kann man sich zuerst über Shibboleth einlogen indem man unter `Institutional (Shibboleth) users sign in` die Auswahl `Swiss Higher Education and Research (SWITCHaai)` festlegt.
 
@@ -101,7 +101,7 @@ knitr::include_graphics(rep("screenshots/WebOfScience_Results.png"))
 ```
 
 ```{block, type='rmddaumenregel'}
-Besonders gut an der Web of Science Seite ist die Verlinkung der Zitierenden Artikel:
+Besonders gut an der Web of Science Seite ist die Verlinkung der zitierenden Artikel:
 ```
 
 ```{r, echo=FALSE, fig.cap = 'Social Science Citation Index - Web of Science Zitierende Artikel finden', fig.width=10, fig.height=8}
@@ -111,7 +111,7 @@ knitr::include_graphics(rep("screenshots/WebOfScience_Citation.png"))
 
 ### Bibliotheken
 
-Im [Onlinekatalog der Swissbib](http://baselbern.swissbib.ch) findet man alle Bücher, die im Biblioteksverband der Universität Bern (IDS Verband) verfügbar sind. 
+Im [Onlinekatalog der Swissbib](http://baselbern.swissbib.ch) findet man alle Bücher, die im Bibliotheksverband der Universität Bern (IDS Verband) verfügbar sind. 
 
 ```{r, echo=FALSE, fig.cap = 'Swissbib Artikel- und Buch-Suche', fig.width=10, fig.height=8}
 knitr::include_graphics(rep("screenshots/Swissbib_Search.png"))
@@ -133,7 +133,7 @@ knitr::include_graphics(rep("screenshots/GoogleScholar_Suche1.png"))
 ```
 
 ```{block, type='rmddaumenregel'}
-Google Scholar Suchabfragen werden besser, wenn du die genauen Schlagworte des Themas eingeben kannst. Verbinde sie mit 'AND' oder 'OR' oder schreib zusammenhängende Wörter in Anführungszeichen um die Suche zu verbessern.
+Google Scholar Suchabfragen werden besser, wenn du die genauen Schlagworte des Themas eingeben kannst. Verbinde sie mit 'AND' oder 'OR' oder schreibe zusammenhängende Wörter in Anführungszeichen um die Suche zu verbessern.
 ```
 
 ```{r, echo=FALSE, fig.cap = 'Google Scholar - Suchabfrage verfeinert', fig.width=10, fig.height=8}
