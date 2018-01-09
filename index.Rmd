@@ -12,8 +12,9 @@ biblio-style: "apalike"
 link-citations: true
 ---
 
+
 ```{r setup, include=FALSE}
-opts_chunk$set(tidy.opts=list(width.cutoff=80),tidy=TRUE)
+opts_chunk$set(tidy.opts = list(width.cutoff = 80), tidy = TRUE)
 ```
 
 # Einleitung

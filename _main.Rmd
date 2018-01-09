@@ -1,0 +1,194 @@
+---
+title: "Wissenschaftliche Arbeitstechniken"
+author: "Mittelbau, Institut für Politikwissenschaft, Universität Bern"
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::gitbook: 
+    css: [style.css, font-awesome.min.css]
+  bookdown::pdf_book: default
+bibliography: ["book.bib"]
+biblio-style: "apalike"
+link-citations: true
+---
+
+
+```{r setup, include=FALSE}
+opts_chunk$set(tidy.opts = list(width.cutoff = 80), tidy = TRUE)
+```
+
+# Einleitung
+
+## Ziel 
+Das folgende Dokument befasst sich mit Arbeitstechniken für das erarbeiten von sozialwissenschaftlichen Fragestellungen.
+Das Dokument vermittelt wissenschaftliches `Handwerk` und dient als Hilfeleistung für Seminararbeiten, Bachelorarbeiten und Masterarbeiten.
+Ziel ist es, grundlegende Kenntnisse der Arbeitstechniken anzueignen und anzuwenden. 
+
+## Aufbau
+Kapitel \@ref(forschungsfrage) erläutert, wie man eine Forschungsfrage stellt. 
+
+Kapitel \@ref(literaturrecherche) erläutert, wie man relevante Literatur zur Behandlung der Forschungsfrage findet. 
+
+Kapitel \@ref(quellenbelege) erläutert, wie man Quellen im Text richtig angibt.
+
+Kapitel \@ref(zitieren) erläutert, wie man verschiedene Dokumente zitiert.
+
+Kapitel \@ref(literaturverzeichniserstellen) erläutert, wie man ein Literaturverzeichnis aufbaut. 
+
+Kapitel \@ref(literaturverwaltung) gibt einige Hinweise, wie man Literatur am besten verwaltet. 
+
+Kapitel \@ref(plagiate) erläutert, wie die Universität Bern Plagiate handhabt.
+
+Kapitel \@ref(r-start) und folgende geben einen ersten Einstieg in R.
+
+## Texthilfen
+
+```{block, type='rmdcomment'}
+Hier steht ein Kommentar.
+```
+
+```{block, type ='rmdwrong'}
+Hier steht ein schlechtes oder falsches Beispiel.
+```
+
+```{block, type ='rmdright'}
+Hier steht ein korrektes Beispiel.
+```
+
+```{block, type = 'rmddaumenregel'}
+Hier steht eine Daumenregel.
+```
+
+
+## Zusammenstellung der Inhalte
+
+Aufbereitung der Inhalte*:
+Ackermann, Kathrin  & 
+Ackermann, Maya   & 
+Alpiger, Claudia   & 
+Angst, Mario  & 
+Arnold, Tobias  & 
+Bernauer, Julian  & 
+Bieri, Niklaus & 
+Brandenberger, Laurence  & 
+Dermont, Clau  & 
+Engler, Sarah  & 
+Fill, Anna  & 
+Freiburghaus, Rahel  & 
+Gerber, Marlène  & 
+Glaus, Anik  & 
+Guignard, Sophie  & 
+Guthmann, Kai  & 
+Heidelberger, Anja  & 
+Herzog, Laura & 
+Kammermann, Lorenz  & 
+Kijewski, Sara  & 
+Koller, Daniela  & 
+Labanino, Rafael & 
+Lutz, Philipp  & 
+Metz, Florence  & 
+Müller, Sean  & 
+Nebel, Kerstin  & 
+Oehrli, Dominique  & 
+Rapp, Carolin  & 
+Schubiger, Maximilian & 
+Storz, Anna & 
+Weisstanner, David & 
+Wirz, Rolf  & 
+Zumbach, David 
+
+
+Zusammenstellung*: Laurence Brandenberger, Clau Dermont, Lorenz Kammermann
+
+(*alphabetisch geordnet)
+
+<!--chapter:end:index.Rmd-->
+
+
+# Forschungsfrage {#forschungsfrage}
+## Aufbau einer Forschungsfrage
+## Gute und Schlechte Forschungsfragen
+
+<!--chapter:end:02-Forschungsfrage.Rmd-->
+
+
+# Literaturrecherche {#literaturrecherche}
+## Quellen
+## Vorgehen
+## Literatur online finden
+### Datenbanken
+### Bibliotheken
+### Google Scholar
+
+<!--chapter:end:03-Literaturrecherche.Rmd-->
+
+
+# Quellenbelege {#quellenbelege}
+## Wo stehen Quellenbelege?
+## Wann braucht man Quellenbelege?
+## Zitate belegen
+## Paraphrasen
+## Verweise
+
+<!--chapter:end:04-Quellenbelege-Zitieren.Rmd-->
+
+
+# Zitieren {#zitieren}
+## Bücher zitieren
+## Sammelbänder zitieren
+## Zeitschriftenartikel zitieren
+## Internetseiten zitieren
+## Ein Datensatz zitieren
+## Ein R-Packet zitieren
+## Gängige Probleme beim Zitieren
+### Autor/Autorin ist unklar
+### Quelle hat kein Datum
+### Autor ist eine Organisation
+
+<!--chapter:end:05-Zitieren.Rmd-->
+
+
+# Literaturverzeichnis erstellen {#literaturverzeichniserstellen}
+
+<!--chapter:end:06-Literaturverzeichnis-erstellen.Rmd-->
+
+
+# Literaturverwaltung {#literaturverwaltung}
+
+<!--chapter:end:07-Literaturverwaltung.Rmd-->
+
+
+# Plagiate {#plagiate}
+
+<!--chapter:end:08-Plagiate.Rmd-->
+
+
+# Placeholder
+
+<!--chapter:end:09-Literaturverzeichnis.Rmd-->
+
+
+# Einstieg in R {#r-start}
+## Vorbereitung
+## Daten anschauen
+## Daten vergleichen
+## Histogramme
+## Bar Graph
+## Scatterplot
+## Grafiken speichern
+## Zusammenfassung
+## Datensätze laden
+## Beobachtungen und Variablen auswählen
+## Variablen bilden und recodieren
+## Daten gruppieren und zusammenfassen
+## Deskriptive Statistik
+## Übung
+## Achsen
+## Farben
+## Marker- und Linientypen
+## Beschriftungen
+## Themen
+## Übung
+
+<!--chapter:end:10-R.Rmd-->
+

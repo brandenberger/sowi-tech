@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Wissenschaftliche Arbeitstechniken</title>
+  <meta name="description" content="Wissenschaftliche Arbeitstechniken">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Wissenschaftliche Arbeitstechniken" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Wissenschaftliche Arbeitstechniken" />
+  
+  
+  
+
+<meta name="author" content="Mittelbau, Institut für Politikwissenschaft, Universität Bern">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="datenanalyse.html">
+<link rel="next" href="r-daten.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="font-awesome.min.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Einleitung</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#ziel"><i class="fa fa-check"></i><b>1.1</b> Ziel</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#aufbau"><i class="fa fa-check"></i><b>1.2</b> Aufbau</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#texthilfen"><i class="fa fa-check"></i><b>1.3</b> Texthilfen</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#zusammenstellung-der-inhalte"><i class="fa fa-check"></i><b>1.4</b> Zusammenstellung der Inhalte</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="forschungsfrage.html"><a href="forschungsfrage.html"><i class="fa fa-check"></i><b>2</b> Forschungsfrage</a><ul>
+<li class="chapter" data-level="2.1" data-path="forschungsfrage.html"><a href="forschungsfrage.html#aufbau-einer-forschungsfrage"><i class="fa fa-check"></i><b>2.1</b> Aufbau einer Forschungsfrage</a></li>
+<li class="chapter" data-level="2.2" data-path="forschungsfrage.html"><a href="forschungsfrage.html#gute-und-schlechte-forschungsfragen"><i class="fa fa-check"></i><b>2.2</b> Gute und Schlechte Forschungsfragen</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="literaturrecherche.html"><a href="literaturrecherche.html"><i class="fa fa-check"></i><b>3</b> Literaturrecherche</a><ul>
+<li class="chapter" data-level="3.1" data-path="literaturrecherche.html"><a href="literaturrecherche.html#quellen"><i class="fa fa-check"></i><b>3.1</b> Quellen</a></li>
+<li class="chapter" data-level="3.2" data-path="literaturrecherche.html"><a href="literaturrecherche.html#vorgehen"><i class="fa fa-check"></i><b>3.2</b> Vorgehen</a></li>
+<li class="chapter" data-level="3.3" data-path="literaturrecherche.html"><a href="literaturrecherche.html#literatur-online-finden"><i class="fa fa-check"></i><b>3.3</b> Literatur online finden</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="literaturrecherche.html"><a href="literaturrecherche.html#datenbanken"><i class="fa fa-check"></i><b>3.3.1</b> Datenbanken</a></li>
+<li class="chapter" data-level="3.3.2" data-path="literaturrecherche.html"><a href="literaturrecherche.html#bibliotheken"><i class="fa fa-check"></i><b>3.3.2</b> Bibliotheken</a></li>
+<li class="chapter" data-level="3.3.3" data-path="literaturrecherche.html"><a href="literaturrecherche.html#google-scholar"><i class="fa fa-check"></i><b>3.3.3</b> Google Scholar</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="quellenbelege.html"><a href="quellenbelege.html"><i class="fa fa-check"></i><b>4</b> Quellenbelege</a><ul>
+<li class="chapter" data-level="4.1" data-path="quellenbelege.html"><a href="quellenbelege.html#wo-stehen-quellenbelege"><i class="fa fa-check"></i><b>4.1</b> Wo stehen Quellenbelege?</a></li>
+<li class="chapter" data-level="4.2" data-path="quellenbelege.html"><a href="quellenbelege.html#wann-braucht-man-quellenbelege"><i class="fa fa-check"></i><b>4.2</b> Wann braucht man Quellenbelege?</a></li>
+<li class="chapter" data-level="4.3" data-path="quellenbelege.html"><a href="quellenbelege.html#zitate-belegen"><i class="fa fa-check"></i><b>4.3</b> Zitate belegen</a></li>
+<li class="chapter" data-level="4.4" data-path="quellenbelege.html"><a href="quellenbelege.html#paraphrasen"><i class="fa fa-check"></i><b>4.4</b> Paraphrasen</a></li>
+<li class="chapter" data-level="4.5" data-path="quellenbelege.html"><a href="quellenbelege.html#verweise"><i class="fa fa-check"></i><b>4.5</b> Verweise</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="zitieren.html"><a href="zitieren.html"><i class="fa fa-check"></i><b>5</b> Zitieren</a><ul>
+<li class="chapter" data-level="5.1" data-path="zitieren.html"><a href="zitieren.html#bucher-zitieren"><i class="fa fa-check"></i><b>5.1</b> Bücher zitieren</a></li>
+<li class="chapter" data-level="5.2" data-path="zitieren.html"><a href="zitieren.html#sammelbander-zitieren"><i class="fa fa-check"></i><b>5.2</b> Sammelbänder zitieren</a></li>
+<li class="chapter" data-level="5.3" data-path="zitieren.html"><a href="zitieren.html#zeitschriftenartikel-zitieren"><i class="fa fa-check"></i><b>5.3</b> Zeitschriftenartikel zitieren</a></li>
+<li class="chapter" data-level="5.4" data-path="zitieren.html"><a href="zitieren.html#internetseiten-zitieren"><i class="fa fa-check"></i><b>5.4</b> Internetseiten zitieren</a></li>
+<li class="chapter" data-level="5.5" data-path="zitieren.html"><a href="zitieren.html#ein-datensatz-zitieren"><i class="fa fa-check"></i><b>5.5</b> Ein Datensatz zitieren</a></li>
+<li class="chapter" data-level="5.6" data-path="zitieren.html"><a href="zitieren.html#ein-r-packet-zitieren"><i class="fa fa-check"></i><b>5.6</b> Ein R-Packet zitieren</a></li>
+<li class="chapter" data-level="5.7" data-path="zitieren.html"><a href="zitieren.html#gangige-probleme-beim-zitieren"><i class="fa fa-check"></i><b>5.7</b> Gängige Probleme beim Zitieren</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="zitieren.html"><a href="zitieren.html#autorautorin-ist-unklar"><i class="fa fa-check"></i><b>5.7.1</b> Autor/Autorin ist unklar</a></li>
+<li class="chapter" data-level="5.7.2" data-path="zitieren.html"><a href="zitieren.html#quelle-hat-kein-datum"><i class="fa fa-check"></i><b>5.7.2</b> Quelle hat kein Datum</a></li>
+<li class="chapter" data-level="5.7.3" data-path="zitieren.html"><a href="zitieren.html#autor-ist-eine-organisation"><i class="fa fa-check"></i><b>5.7.3</b> Autor ist eine Organisation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="literaturverzeichniserstellen.html"><a href="literaturverzeichniserstellen.html"><i class="fa fa-check"></i><b>6</b> Literaturverzeichnis erstellen</a></li>
+<li class="chapter" data-level="7" data-path="literaturverwaltung.html"><a href="literaturverwaltung.html"><i class="fa fa-check"></i><b>7</b> Literaturverwaltung</a></li>
+<li class="chapter" data-level="8" data-path="plagiate.html"><a href="plagiate.html"><i class="fa fa-check"></i><b>8</b> Plagiate</a></li>
+<li class="chapter" data-level="9" data-path="placeholder.html"><a href="placeholder.html"><i class="fa fa-check"></i><b>9</b> Placeholder</a></li>
+<li class="chapter" data-level="10" data-path="r-start.html"><a href="r-start.html"><i class="fa fa-check"></i><b>10</b> Einstieg in R</a><ul>
+<li class="chapter" data-level="10.1" data-path="r-start.html"><a href="r-start.html#vorbereitung"><i class="fa fa-check"></i><b>10.1</b> Vorbereitung</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="datenanalyse.html"><a href="datenanalyse.html"><i class="fa fa-check"></i><b>11</b> Datenanalyse</a><ul>
+<li class="chapter" data-level="11.1" data-path="datenanalyse.html"><a href="datenanalyse.html#daten-anschauen"><i class="fa fa-check"></i><b>11.1</b> Daten anschauen</a></li>
+<li class="chapter" data-level="11.2" data-path="datenanalyse.html"><a href="datenanalyse.html#daten-vergleichen"><i class="fa fa-check"></i><b>11.2</b> Daten vergleichen</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="r-vis.html"><a href="r-vis.html"><i class="fa fa-check"></i><b>12</b> Daten visualisieren</a><ul>
+<li class="chapter" data-level="12.1" data-path="r-vis.html"><a href="r-vis.html#histogramme"><i class="fa fa-check"></i><b>12.1</b> Histogramme</a></li>
+<li class="chapter" data-level="12.2" data-path="r-vis.html"><a href="r-vis.html#bar-graph"><i class="fa fa-check"></i><b>12.2</b> Bar Graph</a></li>
+<li class="chapter" data-level="12.3" data-path="r-vis.html"><a href="r-vis.html#scatterplot"><i class="fa fa-check"></i><b>12.3</b> Scatterplot</a></li>
+<li class="chapter" data-level="12.4" data-path="r-vis.html"><a href="r-vis.html#grafiken-speichern"><i class="fa fa-check"></i><b>12.4</b> Grafiken speichern</a></li>
+<li class="chapter" data-level="12.5" data-path="r-vis.html"><a href="r-vis.html#zusammenfassung"><i class="fa fa-check"></i><b>12.5</b> Zusammenfassung</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="r-daten.html"><a href="r-daten.html"><i class="fa fa-check"></i><b>13</b> Daten säubern</a><ul>
+<li class="chapter" data-level="13.1" data-path="r-daten.html"><a href="r-daten.html#datensatze-laden"><i class="fa fa-check"></i><b>13.1</b> Datensätze laden</a></li>
+<li class="chapter" data-level="13.2" data-path="r-daten.html"><a href="r-daten.html#beobachtungen-und-variablen-auswahlen"><i class="fa fa-check"></i><b>13.2</b> Beobachtungen und Variablen auswählen</a></li>
+<li class="chapter" data-level="13.3" data-path="r-daten.html"><a href="r-daten.html#variablen-bilden-und-recodieren"><i class="fa fa-check"></i><b>13.3</b> Variablen bilden und recodieren</a></li>
+<li class="chapter" data-level="13.4" data-path="r-daten.html"><a href="r-daten.html#daten-gruppieren-und-zusammenfassen"><i class="fa fa-check"></i><b>13.4</b> Daten gruppieren und zusammenfassen</a></li>
+<li class="chapter" data-level="13.5" data-path="r-daten.html"><a href="r-daten.html#deskriptive-statistik"><i class="fa fa-check"></i><b>13.5</b> Deskriptive Statistik</a></li>
+<li class="chapter" data-level="13.6" data-path="r-daten.html"><a href="r-daten.html#ubung"><i class="fa fa-check"></i><b>13.6</b> Übung</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="r-vis2.html"><a href="r-vis2.html"><i class="fa fa-check"></i><b>14</b> Darstellung verfeinern</a><ul>
+<li class="chapter" data-level="14.1" data-path="r-vis2.html"><a href="r-vis2.html#achsen"><i class="fa fa-check"></i><b>14.1</b> Achsen</a></li>
+<li class="chapter" data-level="14.2" data-path="r-vis2.html"><a href="r-vis2.html#farben"><i class="fa fa-check"></i><b>14.2</b> Farben</a></li>
+<li class="chapter" data-level="14.3" data-path="r-vis2.html"><a href="r-vis2.html#marker--und-linientypen"><i class="fa fa-check"></i><b>14.3</b> Marker- und Linientypen</a></li>
+<li class="chapter" data-level="14.4" data-path="r-vis2.html"><a href="r-vis2.html#beschriftungen"><i class="fa fa-check"></i><b>14.4</b> Beschriftungen</a></li>
+<li class="chapter" data-level="14.5" data-path="r-vis2.html"><a href="r-vis2.html#themen"><i class="fa fa-check"></i><b>14.5</b> Themen</a></li>
+<li class="chapter" data-level="14.6" data-path="r-vis2.html"><a href="r-vis2.html#ubung-1"><i class="fa fa-check"></i><b>14.6</b> Übung</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Wissenschaftliche Arbeitstechniken</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r-vis" class="section level1">
+<h1><span class="header-section-number">12</span> Daten visualisieren</h1>
+<p>Fünf verschiedene Visualisierungsmöglichkeiten werden wir heute kurz anschauen, die alle ein ganz anderes Ziel haben, um Daten darzustellen.</p>
+<div id="histogramme" class="section level2">
+<h2><span class="header-section-number">12.1</span> Histogramme</h2>
+<p>Histogramme werden üblicherweise dazu genutzt, um Verteilung und Häufigkeit einer Variable aufzuzeigen, wie beispielsweise beim Geburtsjahr. Ein Histogramm ist für <em>kontinuierliche</em> Variablen geeignet.</p>
+<div class="rmdcomment">
+<p>
+Für Grafiken verwenden wir die Package <code>ggplot2</code>.
+</p>
+<p>
+<code>ggplot2</code> ist nach einem Muster aufgebaut, bei dem zuerst die Grafik per <code>ggplot()</code> initiiert wird und in einem nächsten Schritt die geometrische Struktur definiert wird (die erste Ebene, wo tatsächlich etwas dargestellt wird, im ersten Beispiel <code>geom_histogram()</code>). Entweder im ersten oder zweiten Befehl müssen wir dann die Daten sowie die Variablen definieren, welche die Darstellung bestimmen, hier also <code>data=voto, aes(x=birthyear)</code>. aes steht dabei für “Ästethik”. Anschliessend können mit weiteren Befehlen Titel, Skalen, Farben etc ergänzt werden.
+</p>
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>voto, <span class="kw">aes</span>(<span class="dt">x=</span>birthyear)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth=</span><span class="dv">5</span>)</code></pre></div>
+<p><img src="_main_files/figure-html/vis1-1.png" width="864" /></p>
+<p>Spezifisch bei einem Histogramm ist der Befehl <code>binwidth=5</code>, mit dem wir definieren, wie breit die Balken sind - in diesem Fall sind es jeweils fünf Jahre, die zusammengefasst werden.</p>
+</div>
+<div id="bar-graph" class="section level2">
+<h2><span class="header-section-number">12.2</span> Bar Graph</h2>
+<p>Ein Bar Graph sieht zwar ähnlich wie ein Histogramm aus, zeigt aber Quantitäten von <em>kategoriellen</em> Variablen (Faktoren in R-Sprache). Ein visueller Unterschied ist, dass diese Balken einen Abstand haben, anders als beim Histogramm, wo diese aneinander “gebunden” sind, um die kontinuierliche Variable zu repräsentieren.</p>
+<p>Beispielsweise können wir so darstellen, wie viele der befragten Personen teilgenommen haben - eigentlich dieselbe Information wie aus <code>table(voto$part)</code>, einfach intuitiver interpretierbar.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>voto, <span class="kw">aes</span>(<span class="dt">x=</span>part)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_bar</span>()</code></pre></div>
+<p><img src="_main_files/figure-html/bargraph-1.png" width="864" /></p>
+<p>Natürlich ist es auch möglich, mehr als nur eine Variable darzustellen. Eine Variante ist, dieselbe Grafik pro Geschlechtskategorie zu wiederholen, oder mit unterschiedlichen Farben zu arbeiten:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Ein facet_wrap() macht mehrere Grafiken für alle Kategorien</span>
+<span class="kw">ggplot</span>(<span class="dt">data=</span>voto, <span class="kw">aes</span>(<span class="dt">x=</span>part)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_bar</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>sex)</code></pre></div>
+<p><img src="_main_files/figure-html/bargraph2-1.png" width="864" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Mit fill=sex füllen wir die Balken nach Kategorie mit unt. Farben</span>
+<span class="kw">ggplot</span>(<span class="dt">data=</span>voto, <span class="kw">aes</span>(<span class="dt">x=</span>part, <span class="dt">fill=</span>sex)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_bar</span>()</code></pre></div>
+<p><img src="_main_files/figure-html/bargraph2-2.png" width="864" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zusätzlich führt position=&quot;dodge&quot; dazu, dass die Balken nebeneinander sind</span>
+<span class="kw">ggplot</span>(<span class="dt">data=</span>voto, <span class="kw">aes</span>(<span class="dt">x=</span>part, <span class="dt">fill=</span>sex)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_bar</span>(<span class="dt">position=</span><span class="st">&quot;dodge&quot;</span>)</code></pre></div>
+<p><img src="_main_files/figure-html/bargraph2-3.png" width="864" /></p>
+<p>Hier stellt sich immer die Frage, welche Variable wie dargestellt werden soll. Möglich wäre natürlich auch, das ganze umzudrehen, sodass der Anteil an Teilnehmende pro Geschlechtskategorie offensichtlicher ist:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Hier werden x und y getauscht</span>
+<span class="co"># zusätzlich führt position=&quot;fill&quot; dazu, dass auf 1 normiert wird</span>
+<span class="kw">ggplot</span>(<span class="dt">data=</span>voto, <span class="kw">aes</span>(<span class="dt">x=</span>sex, <span class="dt">fill=</span>part)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_bar</span>(<span class="dt">position=</span><span class="st">&quot;fill&quot;</span>)</code></pre></div>
+<p><img src="_main_files/figure-html/bargraph3-1.png" width="864" /></p>
+</div>
+<div id="scatterplot" class="section level2">
+<h2><span class="header-section-number">12.3</span> Scatterplot</h2>
+<p>Ein Scatterplot zeigt das Verhältnis zwischen zwei quantitativen (meist kontinuierlichen) Variablen an. Diese werden häufig genutzt um visuell festzustellen, ob ein Zusammenhang zwischen zwei Variablen bestehen könnte.</p>
+<p>Wollen wir einen Scatterplot darstellen, braucht es ebenfalls x (die erklärende Variable) und y (die zu erklärende Variable), sowie wiederum eine andere geometrische Form.</p>
+<p>Da die voto-Daten mit Textwerten anstatt mit numerischen Werten arbeiten, müssen wir die Variable <code>part2</code> - die Partizipation an 10 Abstimmungen - kurz recodieren. Das machen wir hier in zwei Schritte: zuerst werden die Werte, welche als “weiss nicht” codiert sind, zu sogenannten <code>NA</code> recodiert. Anschliessend nutzen wir die ersten zwei Zahlen pro Wert als Zahlenwerte.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Hier wird die Variable voto$part2 neu bestimmt als NA, </span>
+<span class="co"># falls die Bedingung in der eckigen Klammer zustimmt, </span>
+<span class="co"># also falls der Wert der Variable bei 98 ist</span>
+voto<span class="op">$</span>part2[voto<span class="op">$</span>part2<span class="op">==</span><span class="st">&quot;98 don&#39;t know&quot;</span>] &lt;-<span class="st"> </span><span class="ot">NA</span>
+
+<span class="co"># Anschliessend machen wir eine neue Variable voto$part10, welche</span>
+<span class="co"># 1. numerisch ist per as.numeric(),</span>
+<span class="co"># 2. einen Substring aus der alten Variable voto$part2 ist per substr(), </span>
+<span class="co"># 3. wobei beim ersten Wert gestartet wird, und beim zweiten gestoppt</span>
+voto<span class="op">$</span>part10 &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">substr</span>(voto<span class="op">$</span>part2, <span class="dt">start=</span><span class="dv">1</span>, <span class="dt">stop=</span><span class="dv">2</span>))
+<span class="kw">table</span>(voto<span class="op">$</span>part10)</code></pre></div>
+<pre><code>## 
+##  0  1  2  3  4  5  6  7  8  9 10 
+##  9  1  6  5  3 13  6 15 29 19 91</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(voto<span class="op">$</span>part10)</code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##   0.000   7.000   9.000   7.914  10.000  10.000       3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Falls bei einem dieser Befehle Probleme auftauchen, kann per ?substr</span>
+<span class="co"># die Hilfeseite aufgerufen werden</span></code></pre></div>
+<p>Jetzt, da wir eine kontinuierliche Variable (das Geburtsjahr) und eine ordinale Variable (die Teilnahmehäufigkeit) haben, können wir diese zwei Werte auf einem Scatterplot darstellen.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Scatterplots bilden wir mit Punkten (geom_point()), welche x- und y-Wert annehmen</span>
+<span class="kw">ggplot</span>(<span class="dt">data=</span>voto, <span class="kw">aes</span>(<span class="dt">x=</span>birthyear, <span class="dt">y=</span>part10)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>()</code></pre></div>
+<p><img src="_main_files/figure-html/scatterplot-1.png" width="864" /></p>
+<p>Hier sehen wir jetzt vor allem ein Problem der Umfrageforschung: solche Umfragen nach Abstimmungen erreichen insbesondere Personen, die politisch interessiert sind, und deshalb häufig an Abstimmungen teilnehmen (viele Werte auf der y-Achse sind bei 10), oder dies zumindest in der Umfrage angeben, weil es sozial erwünscht ist, an Abstimmungen teilzunehmen. Wir überschätzen hier wahrscheinlich die tatsächliche Partizipation dieser Leute.</p>
+<p>Ausserdem haben wir das Problem, dass wir nicht genau wissen, ob die Punkte jeweils nur eine Person darstellen, oder beispielsweise mehrere. Zumindest dieses Problem können wir grafisch lösen, indem wir ein “Jitter” einfügen, der die Punkte per Zufall um den tatsächlichen Wert streut.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ein geom_jitter() statt geom_point() bringt Streuung rein</span>
+<span class="kw">ggplot</span>(<span class="dt">data=</span>voto, <span class="kw">aes</span>(<span class="dt">x=</span>birthyear, <span class="dt">y=</span>part10)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_jitter</span>()</code></pre></div>
+<p><img src="_main_files/figure-html/scatterplot2-1.png" width="864" /></p>
+<p>Allerdings ist es immer noch schwierig, eine Tendenz aus dieser Grafik rauszulesen. Damit wir den Zusammenhang besser interpretieren können, ist es möglich, noch eine Regressionslinie einzufügen, welche einen bivariaten Zusammenhang darstellt.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Wir können direkt einen bivariaten Zusammenhang schätzen</span>
+<span class="co"># Scatterplot ergänzt um eine lineare Regressionslinie</span>
+<span class="kw">ggplot</span>(<span class="dt">data=</span>voto, <span class="kw">aes</span>(<span class="dt">x=</span>birthyear, <span class="dt">y=</span>part10)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_jitter</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>)</code></pre></div>
+<p><img src="_main_files/figure-html/scatterplot3-1.png" width="864" /></p>
+<p>Tatsächlich sehen wir einen leicht negativen Zusammenhang - die Linie zeigt fällt bei jüngeren Jahrgängen. Auch diese sehr einfache Auswertung bestätigt wieder einmal, dass jüngere Stimmberechtigte tendenziell weniger häufig an Abstimmungen teilnehmen.</p>
+<p>Zuletzt können wir noch schauen, welche dieser Personen denn auch an der Abstimmung vom 21. Mai 2017 teilgenommen haben. Beispielsweise, indem wir erneut Farben reinbringen.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Nur bei den Punkten werden wir noch die Farbe reinbringen mit aes(color=part)</span>
+<span class="kw">ggplot</span>(<span class="dt">data=</span>voto, <span class="kw">aes</span>(<span class="dt">x=</span>birthyear, <span class="dt">y=</span>part10)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_jitter</span>(<span class="kw">aes</span>(<span class="dt">color=</span>part)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>)</code></pre></div>
+<p><img src="_main_files/figure-html/scatterplot4-1.png" width="864" /></p>
+<p>Und in einer letzten Variante interessiert uns noch, ob dieses Muster nach Geschlecht unterschiedlich ist. Dafür machen wir für Frauen und Männer je eine bivariate Regressionslinie.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Nur bei den Punkten werden wir noch die Farbe reinbringen mit aes(color=part)</span>
+<span class="kw">ggplot</span>(<span class="dt">data=</span>voto, <span class="kw">aes</span>(<span class="dt">x=</span>birthyear, <span class="dt">y=</span>part10, <span class="dt">color=</span>part)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_jitter</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>)</code></pre></div>
+<p><img src="_main_files/figure-html/scatterplot5-1.png" width="864" /></p>
+</div>
+<div id="grafiken-speichern" class="section level2">
+<h2><span class="header-section-number">12.4</span> Grafiken speichern</h2>
+<p>Sollen die Grafiken schliesslich gespeichert werden, bietet <code>ggplot2</code> mit <code>ggsave()</code> einen einfachen Befehl an. Dieser Befehl nimmt als Normaleinstellung die letzte produzierte Grafik und speichert sie im aktuellen Arbeitsordner ab:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsave</span>(<span class="st">&quot;plottitle.pdf&quot;</span>,     <span class="co"># Dateiname der zu speichernden Grafik</span>
+       <span class="dt">dpi=</span><span class="dv">300</span>,             <span class="co"># Auflösung, von 72 (Minimum) bis 300</span>
+       <span class="dt">units=</span><span class="kw">c</span>(<span class="st">&quot;cm&quot;</span>),       <span class="co"># Genutzte Masse für Dateigrösse, cm/mm/in</span>
+       <span class="dt">width=</span><span class="dv">10</span>, <span class="dt">height=</span><span class="dv">10</span>) <span class="co"># Breite und Grösse der Grafik.</span></code></pre></div>
+</div>
+<div id="zusammenfassung" class="section level2">
+<h2><span class="header-section-number">12.5</span> Zusammenfassung</h2>
+<p>Daten können also aus vielen verschiedenen Blickwinkeln betrachtet und somit analysiert werden. Tabellen und Grafiken sind dabei erste Möglichkeiten, um grosse Datensätze - teilweise mit mehreren hundert Variablen und tausende Beobachtungen - in leichter zu interpretierende Informationen zu reduzieren.</p>
+<p>Im vorliegenden Fall war die Frage, ob junge Stimmberechtigte und Frauen tatsächlich weniger häufig an Volksabstimmungen teilnehmen. Verschiedene Antworten sind möglich:</p>
+<ul>
+<li>mit den Bar Charts haben wir gesehen, dass absolut betrachtet mehr Frauen teilnehmen als Männer. Wird allerdings nach Geschlecht geschaut, wie der Anteil ist, dann ist die Stimmbeteiligung bei Frauen vergleichsweise tiefer als bei Männer.</li>
+<li>mit dem Scatterplot haben wir Alter und Partizipationshäufigkeit verglichen. Obwohl die Daten mit Vorsicht zu geniessen sind, sehen wir eine Tendenz, dass die Beteiligung bei jüngeren Stimmberechtigten tiefer ist als bei älteren Stimmberechtigten.</li>
+<li>Dieser Effekt scheint vor allem bei Männer stark zu sein - bei den Frauen scheint der Zusammenhang weniger stark ausgeprägt zu sein, d.h. vor allem ältere Männer nehmen vergleichsweise häufiger teil.</li>
+</ul>
+<p>Allerdings können wir nicht immer davon ausgehen, dass Datensätze immer so bereitgestellt werden, dass diese direkt auswertbar sind. Deshalb geht es in den nächsten Teilen dieser kurzen Einführung um die Frage, wie Datensätze aufbereitet werden können. Dieser weniger interessante Teil ist dabei mindestens so wichtig wie die Analyse selber: sind die Daten nicht korrekt, beruhen die Auswertungen auf falschen Annahmen, sind Resultate vielleicht dem Zufall geschuldet, und geht viel Zeit verloren, weil die gesamte Arbeit wiederholt werden muss.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="datenanalyse.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-daten.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
